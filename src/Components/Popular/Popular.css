@@ -1,0 +1,9 @@
+.popular-div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.popular-heading {
+    text-align: center;
+}
