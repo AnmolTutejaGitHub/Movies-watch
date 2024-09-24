@@ -9,6 +9,7 @@ import TopRated from "../Components/TopRated/TopRated";
 import Genre from "../Components/Genre/Genre";
 import Footer from "../Components/Footer/Footer";
 import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
+import { IoClose } from "react-icons/io5";
 
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
@@ -16,6 +17,11 @@ function App() {
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
     }
+
+    function closeModal() {
+        SetSelectedMovie(null);
+    }
+
     return (
         <div>
             <div className="landing-page">
@@ -42,14 +48,16 @@ function App() {
                 <Footer />
             </div>
 
-
-            {/* I have to route openmovies  */}
-            {selectedMovie && <OpenMovie selectedMovie={selectedMovie} />}
-
-
-
-
+            {selectedMovie && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" >
+                        <OpenMovie selectedMovie={selectedMovie} />
+                        <IoClose className="close-button" onClick={closeModal} />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
+
 export default App;
