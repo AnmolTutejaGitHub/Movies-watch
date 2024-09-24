@@ -48,8 +48,6 @@ function App() {
                     <br /><br /><br />
                     <TopRated GetSelectedMovie={GetSelectedMovie} />
                     <br /><br /><br />
-                    <Upcoming />
-                    <br /><br /><br />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="War" />
                     <br /><br /><br />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="Documentary" />
@@ -57,6 +55,8 @@ function App() {
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="History" />
                     <br /><br /><br />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
+                    <br /><br /><br />
+                    <Upcoming />
                     <br /><br /><br />
                     <Footer />
                 </div>}

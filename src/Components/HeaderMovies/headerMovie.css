@@ -31,3 +31,9 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.play-movie {
+    font-size: 1.5rem;
+    margin-bottom: -0.3rem;
+    ;
+}
