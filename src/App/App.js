@@ -3,7 +3,8 @@ import './App.css';
 import Trending from '../Components/Trending/Trending';
 import { useState } from "react";
 import OpenMovie from "../Pages/OpenMovie";
-import SearchBar from "../Components/SearchBar/SearchBar";
+import SearchBarPage from "../Pages/SearchBarPage/SearchBarPage";
+
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
 
@@ -13,11 +14,10 @@ function App() {
     return (
         <div>
             <div className="landing-page">
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} />
                 <Popular GetSelectedMovie={GetSelectedMovie} />
                 <Trending GetSelectedMovie={GetSelectedMovie} />
             </div>
-
-            <SearchBar GetSelectedMovie={GetSelectedMovie} />
 
 
             {/* I have to route openmovies  */}
