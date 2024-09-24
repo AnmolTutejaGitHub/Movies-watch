@@ -7,6 +7,7 @@ import SearchBarPage from "../Pages/SearchBarPage/SearchBarPage";
 import Upcoming from "../Components/Upcoming/Upcoming";
 import TopRated from "../Components/TopRated/TopRated";
 import Genre from "../Components/Genre/Genre";
+import Footer from "../Components/Footer/Footer";
 
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
@@ -28,6 +29,14 @@ function App() {
                 <Upcoming />
                 <br /><br /><br />
                 <Genre GetSelectedMovie={GetSelectedMovie} Genre="War" />
+                <br /><br /><br />
+                <Genre GetSelectedMovie={GetSelectedMovie} Genre="Documentary" />
+                <br /><br /><br />
+                <Genre GetSelectedMovie={GetSelectedMovie} Genre="History" />
+                <br /><br /><br />
+                <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
+                <br /><br /><br />
+                <Footer />
             </div>
 
 

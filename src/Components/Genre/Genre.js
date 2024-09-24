@@ -60,7 +60,7 @@ function Genre({ GetSelectedMovie, Genre }) {
 
     return (
         <div>
-            <h2 className="popular-heading">{Genre} Movies</h2>
+            <h2 className="popular-heading">{Genre} {Genre != "Documentary" && Genre != "History" && "Movies"}</h2>
             <div className="popular-div">{renderMovies()}</div>
         </div>
     );
