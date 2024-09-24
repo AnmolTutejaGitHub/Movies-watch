@@ -63,3 +63,8 @@
     display: inline;
     margin-right: 5px;
 }
+
+
+.pointer-cursor {
+    cursor: pointer;
+}

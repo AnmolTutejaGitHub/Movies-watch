@@ -1,4 +1,54 @@
-.popular-movie {
+.popular-movie img {
     border-radius: 10px;
     overflow: hidden;
+}
+
+.popular-movie:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    background-color: rgb(51, 50, 50);
+}
+
+.popular-movie:hover img {
+    border-radius: 0;
+}
+
+.like {
+    font-size: 1.5rem;
+}
+
+.play {
+    font-size: 1.5rem;
+}
+
+.HD {
+    font-size: 1.25rem;
+}
+
+.audio-description {
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin-bottom: -2px;
+}
+
+.popular-icons {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.hover-div {
+    padding-bottom: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pd-10px {
+    padding-left: 10px;
 }

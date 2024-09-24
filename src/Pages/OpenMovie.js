@@ -86,9 +86,9 @@ function OpenMovie({ selectedMovie }) {
                 <div className="left">
                     <div className="movie-minor">
                         <p className='white-color'>{release_year}</p>
-                        <MdHd className='white-color' />
-                        <LiaAudioDescriptionSolid className="audio-description white-color" />
-                        <PiSubtitlesFill className='white-color' />
+                        <MdHd className='white-color pointer-cursor' />
+                        <LiaAudioDescriptionSolid className="audio-description white-color pointer-cursor" />
+                        <PiSubtitlesFill className='white-color pointer-cursor' />
                         {selectedMovie.adult && <TbRating18Plus />}
                     </div>
                     <p>{selectedMovie.overview}</p>

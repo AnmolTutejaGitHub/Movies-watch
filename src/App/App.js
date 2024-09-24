@@ -8,6 +8,7 @@ import Upcoming from "../Components/Upcoming/Upcoming";
 import TopRated from "../Components/TopRated/TopRated";
 import Genre from "../Components/Genre/Genre";
 import Footer from "../Components/Footer/Footer";
+import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
 
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
@@ -19,6 +20,8 @@ function App() {
         <div>
             <div className="landing-page">
                 <SearchBarPage GetSelectedMovie={GetSelectedMovie} />
+                <br /><br /><br />
+                <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
                 <br /><br /><br />
                 <Popular GetSelectedMovie={GetSelectedMovie} />
                 <br /><br /><br />

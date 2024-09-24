@@ -1,0 +1,30 @@
+.header-movie {
+    width: 100%;
+    background-color: grey;
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 8rem 5rem;
+}
+
+.header-movie p {
+    width: 60%;
+}
+
+.header-movie button {
+    background-color: white;
+    color: black;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.header-movie button:hover {
+    background-color: #eeeded;
+}
