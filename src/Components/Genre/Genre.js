@@ -66,7 +66,16 @@ function Genre({ GetSelectedMovie, Genre }) {
         <div>
             <h2 className="popular-heading">{Genre} {Genre !== "Documentary" && Genre !== "History" && "Movies"}</h2>
             <Splide
-                options={{ rewind: true, perPage: 6.5 }}
+                options={{
+                    rewind: true, perPage: 6.5, breakpoints: {
+                        768: {
+                            perPage: 2
+                        },
+                        1024: {
+                            perPage: 4
+                        }
+                    }
+                }}
                 aria-label={`${Genre} Movies`}
             >
                 {renderMovies()}

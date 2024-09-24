@@ -35,7 +35,16 @@ function Upcoming() {
         <div>
             <h2 className="popular-heading">Upcoming Movies</h2>
             <Splide
-                options={{ rewind: true, perPage: 6.5 }}
+                options={{
+                    rewind: true, perPage: 6.5, breakpoints: {
+                        768: {
+                            perPage: 2
+                        },
+                        1024: {
+                            perPage: 4
+                        }
+                    }
+                }}
                 aria-label="Upcoming Movies"
             >
                 {renderUpcoming}
