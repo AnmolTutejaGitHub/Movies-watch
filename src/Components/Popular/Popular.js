@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PopularDiv from './PopularDiv';
 import './Popular.css';
-import '../../Pages/OpenMovie'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 //import OpenMovie from '../../Pages/OpenMovie';
 
 function Popular({ GetSelectedMovie }) {
@@ -33,14 +34,21 @@ function Popular({ GetSelectedMovie }) {
 
     const renderMovies = () => {
         return movies.map((movie) => (
-            <PopularDiv movie={movie} key={movie.id} onClick={handleMovieClick} />
+            <SplideSlide key={movie.id}>
+                <PopularDiv movie={movie} onClick={() => handleMovieClick(movie)} />
+            </SplideSlide>
         ));
     };
 
     return (
         <div>
             <h2 className="popular-heading">Popular Movies</h2>
-            <div className="popular-div">{renderMovies()}</div>
+            <Splide
+                options={{ rewind: true, perPage: 6.5 }}
+                aria-label="Popular Movies"
+            >
+                {renderMovies()}
+            </Splide>
 
             {/* <OpenMovie selectedMovie={selectedMovie} /> */}
         </div>

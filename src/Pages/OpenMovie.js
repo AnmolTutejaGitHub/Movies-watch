@@ -46,10 +46,15 @@ function OpenMovie({ selectedMovie }) {
     };
 
     const fetchCast = async () => {
-        const castResponse = await fetch(`https://api.themoviedb.org/3/movie/${selectedMovie.id}/credits?api_key=${API_KEY}`);
-        const castData = await castResponse.json();
-        // console.log(castData)
-        setCast(castData.cast);
+        try {
+            const castResponse = await fetch(`https://api.themoviedb.org/3/movie/${selectedMovie.id}/credits?api_key=${API_KEY}`);
+            const castData = await castResponse.json();
+            // console.log(castData)
+            setCast(castData.cast);
+        }
+        catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {

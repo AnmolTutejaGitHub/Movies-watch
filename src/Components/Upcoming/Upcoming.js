@@ -1,11 +1,14 @@
+// endpoint : const upcomingMoviesUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=YOUR_API_KEY";
 import { useState, useEffect } from "react";
 import PopularDiv from "../Popular/PopularDiv";
 import '../Popular/Popular.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
-// endpoint : const upcomingMoviesUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=YOUR_API_KEY";
 function Upcoming() {
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
     const [movies, SetMovies] = useState([]);
+
     async function fetchUpcoming() {
         const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`);
         const data = await response.json();
@@ -18,19 +21,27 @@ function Upcoming() {
     }, []);
 
     const renderUpcoming = movies.map((movie) => {
-        return <PopularDiv movie={movie} onClick={handleClick} />
-    })
+        return (
+            <SplideSlide key={movie.id}>
+                <PopularDiv movie={movie} onClick={() => handleClick(movie)} />
+            </SplideSlide>
+        );
+    });
 
-    function handleClick() {
-
+    function handleClick(movie) {
     }
-
 
     return (
         <div>
             <h2 className="popular-heading">Upcoming Movies</h2>
-            <div className="popular-div">{renderUpcoming}</div>
+            <Splide
+                options={{ rewind: true, perPage: 6.5 }}
+                aria-label="Upcoming Movies"
+            >
+                {renderUpcoming}
+            </Splide>
         </div>
     );
 }
+
 export default Upcoming;

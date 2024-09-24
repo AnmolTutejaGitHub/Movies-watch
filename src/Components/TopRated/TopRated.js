@@ -1,8 +1,11 @@
+//endpoint : https://api.themoviedb.org/3/movie/top_rated?api_key=YOUR_API_KEY
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PopularDiv from '../Popular/PopularDiv';
 import '../Popular/PopularDiv.css';
-//endpoint : https://api.themoviedb.org/3/movie/top_rated?api_key=YOUR_API_KEY
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+
 function TopRated({ GetSelectedMovie }) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -30,15 +33,23 @@ function TopRated({ GetSelectedMovie }) {
 
     const renderMovies = () => {
         return movies.map((movie) => (
-            <PopularDiv movie={movie} key={movie.id} onClick={handleMovieClick} />
+            <SplideSlide key={movie.id}>
+                <PopularDiv movie={movie} onClick={() => handleMovieClick(movie)} />
+            </SplideSlide>
         ));
     };
 
     return (
         <div>
             <h2 className="popular-heading">Top Rated Movies</h2>
-            <div className="popular-div">{renderMovies()}</div>
+            <Splide
+                options={{ rewind: true, perPage: 6.5 }}
+                aria-label="Top Rated Movies"
+            >
+                {renderMovies()}
+            </Splide>
         </div>
     );
 }
+
 export default TopRated;

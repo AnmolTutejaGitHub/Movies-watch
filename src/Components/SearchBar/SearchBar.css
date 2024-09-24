@@ -2,4 +2,30 @@
     width: 350px;
     padding: 10px;
     outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    color: white;
+}
+
+.navigation {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+
+.login-btn {
+    margin-left: auto;
 }

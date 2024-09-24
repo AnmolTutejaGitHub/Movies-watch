@@ -23,7 +23,7 @@ function SearchResult({ term, GetSelectedMovie }) {
 
 
     return (
-        <div>
+        <div className="result-display">
             {searchResults !== [] && <div className="result-holder">{renderMovies}</div>}
         </div>
     );

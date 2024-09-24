@@ -2,7 +2,7 @@ import SearchBar from "../../Components/SearchBar/SearchBar";
 import SearchResult from "../../Components/SearchBar/SearchResult";
 import { useState } from "react";
 
-function SearchBarPage({ GetSelectedMovie }) {
+function SearchBarPage({ GetSelectedMovie, onChange, onClearSearch }) {
     const [searchTerm, setSerachTerm] = useState('');
 
     function setSearchTerm(term) {
@@ -10,8 +10,7 @@ function SearchBarPage({ GetSelectedMovie }) {
     }
     return (
         <div>
-            <SearchBar setSearchTerm={setSearchTerm} />
-            <br /><br />
+            <SearchBar setSearchTerm={setSearchTerm} onChange={onChange} onClearSearch={onClearSearch} />
             <SearchResult term={searchTerm} GetSelectedMovie={GetSelectedMovie} />
         </div>
     );

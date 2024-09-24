@@ -1,10 +1,12 @@
+// endpoint : https://api.themoviedb.org/3/trending/{media_type}/{time_window}
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PopularDiv from '../Popular/PopularDiv';
 import '../Popular/PopularDiv.css';
-//import OpenMovie from '../../Pages/OpenMovie';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
-// endpoint : https://api.themoviedb.org/3/trending/{media_type}/{time_window}
 function Trending({ GetSelectedMovie }) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -32,17 +34,23 @@ function Trending({ GetSelectedMovie }) {
 
     const renderMovies = () => {
         return movies.map((movie) => (
-            <PopularDiv movie={movie} key={movie.id} onClick={handleMovieClick} />
+            <SplideSlide key={movie.id}>
+                <PopularDiv movie={movie} onClick={() => handleMovieClick(movie)} />
+            </SplideSlide>
         ));
     };
 
     return (
         <div>
             <h2 className="popular-heading">Trending Movies</h2>
-            <div className="popular-div">{renderMovies()}</div>
-
-            {/* <OpenMovie selectedMovie={selectedMovie} /> */}
+            <Splide
+                options={{ rewind: true, perPage: 6.5 }}
+                aria-label="Trending Movies"
+            >
+                {renderMovies()}
+            </Splide>
         </div>
     );
 }
+
 export default Trending;

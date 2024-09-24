@@ -17,7 +17,7 @@ function PopularDiv({ movie, onClick }) {
         <div className='popular-div'>
             <div onClick={() => onClick(movie)} className="popular-movie" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                 <img src={`${imageBaseUrl}${movie.poster_path}`} alt={movie.title} />
-                {hover &&
+                {/* {hover &&
                     <div className='hover-div'>
                         <p className='align-center bold'>{movie.title}</p>
                         <div className="pd-10px">{release_date_string.substring(0, 4)}</div>
@@ -29,7 +29,7 @@ function PopularDiv({ movie, onClick }) {
                             <FaCirclePlay className='play' />
                         </div>
                     </div>
-                }
+                } */}
             </div>
         </div>
     );

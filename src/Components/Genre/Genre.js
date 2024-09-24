@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PopularDiv from '../Popular/PopularDiv';
 import '../Popular/PopularDiv.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function Genre({ GetSelectedMovie, Genre }) {
     const genreMap = {
@@ -31,7 +33,7 @@ function Genre({ GetSelectedMovie, Genre }) {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     const fetchMovies = async () => {
-        const response = await axios.get(' https://api.themoviedb.org/3/discover/movie', {
+        const response = await axios.get('https://api.themoviedb.org/3/discover/movie', {
             params: {
                 api_key: 'ba7953e31d9a9e4bbd5bc6729366b6a2',
                 language: 'en-US',
@@ -45,7 +47,7 @@ function Genre({ GetSelectedMovie, Genre }) {
 
     useEffect(() => {
         fetchMovies();
-    }, []);
+    }, [Genre]);
 
     const handleMovieClick = (movie) => {
         setSelectedMovie(movie);
@@ -54,15 +56,23 @@ function Genre({ GetSelectedMovie, Genre }) {
 
     const renderMovies = () => {
         return movies.map((movie) => (
-            <PopularDiv movie={movie} key={movie.id} onClick={handleMovieClick} />
+            <SplideSlide key={movie.id}>
+                <PopularDiv movie={movie} onClick={() => handleMovieClick(movie)} />
+            </SplideSlide>
         ));
     };
 
     return (
         <div>
-            <h2 className="popular-heading">{Genre} {Genre != "Documentary" && Genre != "History" && "Movies"}</h2>
-            <div className="popular-div">{renderMovies()}</div>
+            <h2 className="popular-heading">{Genre} {Genre !== "Documentary" && Genre !== "History" && "Movies"}</h2>
+            <Splide
+                options={{ rewind: true, perPage: 6.5 }}
+                aria-label={`${Genre} Movies`}
+            >
+                {renderMovies()}
+            </Splide>
         </div>
     );
 }
+
 export default Genre;

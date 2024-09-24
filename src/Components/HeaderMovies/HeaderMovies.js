@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import HeaderMovie from './HeaderMovie';
 import axios from 'axios';
 import './HeaderMovies.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function HeaderMovies({ GetSelectedMovie }) {
-
     const [movies, setMovies] = useState([]);
+
     const fetchMovies = async () => {
         const response = await axios.get('https://api.themoviedb.org/3/movie/top_rated', {
             params: {
@@ -22,14 +24,20 @@ function HeaderMovies({ GetSelectedMovie }) {
         fetchMovies();
     }, []);
 
-
-    const renderMovies = movies.map((movie) => {
-        return <HeaderMovie movie={movie} GetSelectedMovie={GetSelectedMovie} />
-    });
-
+    const renderMovies = movies.map((movie) => (
+        <SplideSlide key={movie.id}>
+            <HeaderMovie movie={movie} GetSelectedMovie={GetSelectedMovie} />
+        </SplideSlide>
+    ));
 
     return (
-        <div class="header-movies">{renderMovies}</div>
+        <Splide
+            options={{ rewind: true, perPage: 1, gap: '1rem' }}
+            aria-label="Top Rated Movies"
+        >
+            {renderMovies}
+        </Splide>
     );
 }
+
 export default HeaderMovies;

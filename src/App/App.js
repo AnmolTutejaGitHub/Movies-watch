@@ -11,8 +11,11 @@ import Footer from "../Components/Footer/Footer";
 import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
 import { IoClose } from "react-icons/io5";
 
+// https://splidejs.com/ for slide show
+
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
+    const [search, setSearch] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -22,30 +25,41 @@ function App() {
         SetSelectedMovie(null);
     }
 
+    function handleSearchChange() {
+        setSearch(true);
+    }
+
+    function onClearSearch() {
+        setSearch(false);
+    }
     return (
         <div>
             <div className="landing-page">
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} />
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} />
                 <br /><br /><br />
-                <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
-                <br /><br /><br />
-                <Popular GetSelectedMovie={GetSelectedMovie} />
-                <br /><br /><br />
-                <Trending GetSelectedMovie={GetSelectedMovie} />
-                <br /><br /><br />
-                <TopRated GetSelectedMovie={GetSelectedMovie} />
-                <br /><br /><br />
-                <Upcoming />
-                <br /><br /><br />
-                <Genre GetSelectedMovie={GetSelectedMovie} Genre="War" />
-                <br /><br /><br />
-                <Genre GetSelectedMovie={GetSelectedMovie} Genre="Documentary" />
-                <br /><br /><br />
-                <Genre GetSelectedMovie={GetSelectedMovie} Genre="History" />
-                <br /><br /><br />
-                <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
-                <br /><br /><br />
-                <Footer />
+
+                {!search && <div>
+                    <br /><br />
+                    <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
+                    <br /><br /><br />
+                    <Popular GetSelectedMovie={GetSelectedMovie} />
+                    <br /><br /><br />
+                    <Trending GetSelectedMovie={GetSelectedMovie} />
+                    <br /><br /><br />
+                    <TopRated GetSelectedMovie={GetSelectedMovie} />
+                    <br /><br /><br />
+                    <Upcoming />
+                    <br /><br /><br />
+                    <Genre GetSelectedMovie={GetSelectedMovie} Genre="War" />
+                    <br /><br /><br />
+                    <Genre GetSelectedMovie={GetSelectedMovie} Genre="Documentary" />
+                    <br /><br /><br />
+                    <Genre GetSelectedMovie={GetSelectedMovie} Genre="History" />
+                    <br /><br /><br />
+                    <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
+                    <br /><br /><br />
+                    <Footer />
+                </div>}
             </div>
 
             {selectedMovie && (
@@ -55,8 +69,9 @@ function App() {
                         <IoClose className="close-button" onClick={closeModal} />
                     </div>
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 }
 
