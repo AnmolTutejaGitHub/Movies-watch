@@ -4,6 +4,8 @@ import Trending from '../Components/Trending/Trending';
 import { useState } from "react";
 import OpenMovie from "../Pages/OpenMovie";
 import SearchBarPage from "../Pages/SearchBarPage/SearchBarPage";
+import Upcoming from "../Components/Upcoming/Upcoming";
+import TopRated from "../Components/TopRated/TopRated";
 
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
@@ -15,8 +17,14 @@ function App() {
         <div>
             <div className="landing-page">
                 <SearchBarPage GetSelectedMovie={GetSelectedMovie} />
+                <br /><br /><br />
                 <Popular GetSelectedMovie={GetSelectedMovie} />
+                <br /><br /><br />
                 <Trending GetSelectedMovie={GetSelectedMovie} />
+                <br /><br /><br />
+                <Upcoming />
+                <br /><br /><br />
+                <TopRated GetSelectedMovie={GetSelectedMovie} />
             </div>
 
 

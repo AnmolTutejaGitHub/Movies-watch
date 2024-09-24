@@ -11,6 +11,7 @@ function SearchBarPage({ GetSelectedMovie }) {
     return (
         <div>
             <SearchBar setSearchTerm={setSearchTerm} />
+            <br /><br />
             <SearchResult term={searchTerm} GetSelectedMovie={GetSelectedMovie} />
         </div>
     );
