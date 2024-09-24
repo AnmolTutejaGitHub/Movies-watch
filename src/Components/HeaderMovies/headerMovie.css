@@ -28,3 +28,7 @@
 .header-movie button:hover {
     background-color: #eeeded;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

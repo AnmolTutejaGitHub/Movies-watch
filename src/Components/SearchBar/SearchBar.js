@@ -1,5 +1,4 @@
-import { useState } from "react";
-import SearchResult from "./SearchResult";
+import './SearchBar.css';
 function SearchBar({ setSearchTerm }) {
 
     function handleSearch(event) {
@@ -7,7 +6,7 @@ function SearchBar({ setSearchTerm }) {
     }
     return (
         <div>
-            <input type="text" onChange={handleSearch}></input>
+            <input placeholder="Search Movies" type="text" onChange={handleSearch} className="search-input"></input>
         </div>
     );
 }

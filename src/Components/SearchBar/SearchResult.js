@@ -17,14 +17,14 @@ function SearchResult({ term, GetSelectedMovie }) {
         fetchResult();
     }, [term])
 
-    const renderMovies = searchResults.map((movie) => {
-        return <SearchResultDiv movie={movie} GetSelectedMovie={GetSelectedMovie} />
+    const renderMovies = searchResults.filter(movie => movie.poster_path).map((movie) => {
+        return <SearchResultDiv key={movie.id} movie={movie} GetSelectedMovie={GetSelectedMovie} />;
     });
 
 
     return (
         <div>
-            {searchResults != [] && <div className="result-holder">{renderMovies}</div>}
+            {searchResults !== [] && <div className="result-holder">{renderMovies}</div>}
         </div>
     );
 }

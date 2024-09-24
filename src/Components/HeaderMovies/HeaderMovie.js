@@ -14,7 +14,7 @@ function HeaderMovie({ movie, GetSelectedMovie }) {
             <div className="header-details">
                 <h1>{movie.title}</h1>
                 <p>{movie.overview}</p>
-                <button onClick={handleClick}>Watch</button>
+                <button onClick={handleClick} className='cursor-pointer'>Watch</button>
             </div>
         </div >
     );
