@@ -1,0 +1,12 @@
+.allmoviesDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.load-more {
+    cursor: pointer;
+    text-align: center;
+}

@@ -11,12 +11,14 @@ import Footer from "../Components/Footer/Footer";
 import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
 import { IoClose } from "react-icons/io5";
 import Margin from '../Components/Margin/Margin';
+import AllMovies from "../Components/AllMovies/AllMovies";
 
 // https://splidejs.com/ for slide show
 
 function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
     const [search, setSearch] = useState(false);
+    const [AllMoviesClicked, setAllMoviesClicked] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -33,13 +35,17 @@ function App() {
     function onClearSearch() {
         setSearch(false);
     }
+
+    function handleAllMovies(set) {
+        setAllMoviesClicked(set);
+    }
     return (
         <div>
             <div className="landing-page">
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} />
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} />
                 <br /><br /><br />
 
-                {!search && <div>
+                {!search && !AllMoviesClicked && <div>
                     <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
                     <Margin padding="80px" />
                     <Popular GetSelectedMovie={GetSelectedMovie} />
@@ -71,6 +77,8 @@ function App() {
                 </div>
             )
             }
+
+            {AllMoviesClicked && <AllMovies GetSelectedMovie={GetSelectedMovie} />}
         </div >
     );
 }
