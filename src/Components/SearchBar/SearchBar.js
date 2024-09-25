@@ -6,6 +6,8 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         setSearchTerm(value);
 
         if (value.trim() !== '') {
+            setFilter(false);
+            handleAllMovies(false);
             onChange();
         } else {
             onClearSearch();

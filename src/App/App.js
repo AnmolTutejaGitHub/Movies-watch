@@ -13,6 +13,7 @@ import { IoClose } from "react-icons/io5";
 import Margin from '../Components/Margin/Margin';
 import AllMovies from "../Components/AllMovies/AllMovies";
 import Filter from '../Pages/Filter/Filter';
+import { Puff } from 'react-loader-spinner'
 
 // https://splidejs.com/ for slide show
 
@@ -40,6 +41,8 @@ function App() {
 
     function handleAllMovies(set) {
         setAllMoviesClicked(set);
+        setSearch(false);
+        onClearSearch();
     }
 
     function SetFilter(set) {
@@ -48,7 +51,7 @@ function App() {
     return (
         <div>
             <div className="landing-page">
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} />
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} />
                 <br /><br /><br />
 
                 {filter &&

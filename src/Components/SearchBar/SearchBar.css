@@ -70,7 +70,7 @@ input::placeholder {
 }
 
 /* will make navbar for mobileview soon */
-@media(max-width:900px) {
+@media(max-width:780px) {
     .navbar-a {
         visibility: hidden;
     }
