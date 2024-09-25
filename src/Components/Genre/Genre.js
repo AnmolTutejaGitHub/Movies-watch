@@ -30,7 +30,6 @@ function Genre({ GetSelectedMovie, Genre }) {
     };
 
     const [movies, setMovies] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const fetchMovies = async () => {
         const response = await axios.get('https://api.themoviedb.org/3/discover/movie', {
@@ -50,7 +49,6 @@ function Genre({ GetSelectedMovie, Genre }) {
     }, [Genre]);
 
     const handleMovieClick = (movie) => {
-        setSelectedMovie(movie);
         GetSelectedMovie(movie);
     };
 

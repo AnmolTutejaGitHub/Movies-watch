@@ -9,7 +9,6 @@ import '@splidejs/react-splide/css';
 
 function Trending({ GetSelectedMovie }) {
     const [movies, setMovies] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const fetchMovies = async () => {
         const response = await axios.get('https://api.themoviedb.org/3/trending/movie/day', {
@@ -28,7 +27,6 @@ function Trending({ GetSelectedMovie }) {
     }, []);
 
     const handleMovieClick = (movie) => {
-        setSelectedMovie(movie);
         GetSelectedMovie(movie);
     };
 

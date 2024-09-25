@@ -62,7 +62,7 @@ function App() {
                     <Margin padding="80px" />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
                     <Margin padding="80px" />
-                    <Upcoming />
+                    <Upcoming GetSelectedMovie={GetSelectedMovie} />
                     <Margin padding="80px" />
                     <Footer />
                 </div>}

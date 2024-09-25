@@ -8,7 +8,6 @@ import '@splidejs/react-splide/css';
 
 function TopRated({ GetSelectedMovie }) {
     const [movies, setMovies] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const fetchMovies = async () => {
         const response = await axios.get('https://api.themoviedb.org/3/movie/top_rated', {
@@ -27,7 +26,6 @@ function TopRated({ GetSelectedMovie }) {
     }, []);
 
     const handleMovieClick = (movie) => {
-        setSelectedMovie(movie);
         GetSelectedMovie(movie);
     };
 

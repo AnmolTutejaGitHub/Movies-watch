@@ -10,7 +10,7 @@ function SearchBarPage({ GetSelectedMovie, onChange, onClearSearch, handleAllMov
     }
     return (
         <div>
-            <SearchBar setSearchTerm={setSearchTerm} onChange={onChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} />
+            <SearchBar setSearchTerm={setSearchTerm} onChange={onChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} term={searchTerm} />
             <SearchResult term={searchTerm} GetSelectedMovie={GetSelectedMovie} />
         </div>
     );

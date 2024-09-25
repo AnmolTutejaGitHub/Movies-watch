@@ -1,5 +1,5 @@
 import './SearchBar.css';
-function SearchBar({ setSearchTerm, onChange, onClearSearch, handleAllMovies }) {
+function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies }) {
 
     function handleSearch(event) {
         const value = event.target.value;
@@ -20,12 +20,14 @@ function SearchBar({ setSearchTerm, onChange, onClearSearch, handleAllMovies }) 
     function handleHomeClicked(event) {
         event.preventDefault();
         handleAllMovies(false);
+        setSearchTerm('');
+        onClearSearch();
     }
 
     return (
         <div className='navigation nav-bar'>
             <a className="navbar-a logo" href="#">CineRealize</a>
-            <input placeholder="Search Movies" type="text" onChange={handleSearch} className="search-input"></input>
+            <input placeholder="Search Movies" type="text" onChange={handleSearch} className="search-input" value={term}></input>
             <a className="navbar-a" href="#" onClick={handleHomeClicked}>Home</a>
             <a className="navbar-a" href="#" onClick={handleAllMoviesClick}>All Movies</a>
             <a className="navbar-a" href="#">Filter</a>

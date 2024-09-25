@@ -9,29 +9,10 @@ import { TbRating18Plus } from "react-icons/tb";
 function OpenMovie({ selectedMovie }) {
     // console.log(selectedMovie.id);
     const release_date_string = selectedMovie.release_date || "";
-    const monthmap = {
-        '01': 'Jan',
-        '02': 'Feb',
-        '03': 'Mar',
-        '04': 'Apr',
-        '05': 'May',
-        '06': 'Jun',
-        '07': 'Jul',
-        '08': 'Aug',
-        '09': 'Sep',
-        '10': 'Oct',
-        '11': 'Nov',
-        '12': 'Dec',
-    };
-
     let release_year = '';
     if (release_date_string) {
-        release_year =
-            // release_date_string.substring(8, 10) + " " +
-            //monthmap[release_date_string.substring(5, 7)] + " " +
-            release_date_string.substring(0, 4);
+        release_year = release_date_string.substring(0, 4);
     }
-
 
 
     const [genres, setGenres] = useState([]);
@@ -102,8 +83,8 @@ function OpenMovie({ selectedMovie }) {
                 </div>
 
                 <div className='right'>
-                    {genres != [] && <div className='genre flex-row'><span className='white-color span'>Genre : </span>{renderGenres}</div>}
-                    {cast != [] && <div className='cast flex-row'><span className='white-color span'>Cast : </span>{renderCast}</div>}
+                    {genres !== [] && <div className='genre flex-row'><span className='white-color span'>Genre : </span>{renderGenres}</div>}
+                    {cast !== [] && <div className='cast flex-row'><span className='white-color span'>Cast : </span>{renderCast}</div>}
                 </div>
             </div>
 

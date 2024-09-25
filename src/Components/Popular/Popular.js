@@ -9,7 +9,7 @@ import '@splidejs/react-splide/css';
 function Popular({ GetSelectedMovie }) {
 
     const [movies, setMovies] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
+    //const [selectedMovie, setSelectedMovie] = useState(null);
 
     const fetchMovies = async () => {
         const response = await axios.get('https://api.themoviedb.org/3/movie/popular', {
@@ -28,7 +28,7 @@ function Popular({ GetSelectedMovie }) {
     }, []);
 
     const handleMovieClick = (movie) => {
-        setSelectedMovie(movie);
+        //setSelectedMovie(movie);
         GetSelectedMovie(movie);
     };
 
