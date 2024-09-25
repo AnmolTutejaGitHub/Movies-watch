@@ -19,7 +19,7 @@ function Upcoming({ GetSelectedMovie }) {
         let allMovies = [];
 
         for (let page = 1; page <= totalPages; page++) {
-            const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=release_date.desc&page=${page}`);
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=release_date.desc&page=${page}`);
             const data = await response.json();
             allMovies = allMovies.concat(data.results);
         }

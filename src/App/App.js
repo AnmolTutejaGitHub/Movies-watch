@@ -15,6 +15,8 @@ import AllMovies from "../Components/AllMovies/AllMovies";
 import Filter from '../Pages/Filter/Filter';
 import { Puff } from 'react-loader-spinner'
 
+// https://cors-anywhere.herokuapp.com/ as proxy 
+
 // https://splidejs.com/ for slide show
 
 function App() {

@@ -34,7 +34,7 @@ function Genre({ GetSelectedMovie, Genre }) {
     const [loading, setLoading] = useState(true);
 
     const fetchMovies = async () => {
-        const response = await axios.get('https://api.themoviedb.org/3/discover/movie', {
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/discover/movie', {
             params: {
                 api_key: 'ba7953e31d9a9e4bbd5bc6729366b6a2',
                 language: 'en-US',
