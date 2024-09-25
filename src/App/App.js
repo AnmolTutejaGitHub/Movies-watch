@@ -12,6 +12,7 @@ import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
 import { IoClose } from "react-icons/io5";
 import Margin from '../Components/Margin/Margin';
 import AllMovies from "../Components/AllMovies/AllMovies";
+import Filter from '../Pages/Filter/Filter';
 
 // https://splidejs.com/ for slide show
 
@@ -19,6 +20,7 @@ function App() {
     const [selectedMovie, SetSelectedMovie] = useState(null);
     const [search, setSearch] = useState(false);
     const [AllMoviesClicked, setAllMoviesClicked] = useState(false);
+    const [filter, setFilter] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -39,13 +41,26 @@ function App() {
     function handleAllMovies(set) {
         setAllMoviesClicked(set);
     }
+
+    function SetFilter(set) {
+        setFilter(set);
+    }
     return (
         <div>
             <div className="landing-page">
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} />
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} />
                 <br /><br /><br />
 
-                {!search && !AllMoviesClicked && <div>
+                {filter &&
+                    (
+                        <>
+                            <Margin padding="100px" />
+                            <Filter />
+                        </>
+                    )
+                }
+
+                {!search && !filter && !AllMoviesClicked && <div>
                     <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
                     <Margin padding="80px" />
                     <Popular GetSelectedMovie={GetSelectedMovie} />
@@ -78,7 +93,7 @@ function App() {
             )
             }
 
-            {AllMoviesClicked && <AllMovies GetSelectedMovie={GetSelectedMovie} />}
+            {AllMoviesClicked && !filter && <AllMovies GetSelectedMovie={GetSelectedMovie} />}
         </div >
     );
 }

@@ -54,11 +54,11 @@ function Footer() {
             <div className='copyright'>
                 <div>@2024 Anmol Tuteja</div>
                 <div className='social-icons'>
-                    <FaFacebook />
-                    <RiInstagramFill />
-                    <BsTwitterX />
-                    <FaDiscord />
-                    <FaGithub />
+                    <a href="#"><FaFacebook /></a>
+                    <a href="#"><RiInstagramFill /></a>
+                    <a href="https://x.com/Anmol_Tuteja_" target="_blank"><BsTwitterX /></a>
+                    <a href="#"><FaDiscord /></a>
+                    <a href="https://github.com/AnmolTutejaGitHub" target="_blank"> <FaGithub /></a>
                 </div>
             </div>
         </div >

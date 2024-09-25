@@ -1,5 +1,5 @@
 import './SearchBar.css';
-function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies }) {
+function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter }) {
 
     function handleSearch(event) {
         const value = event.target.value;
@@ -14,14 +14,20 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
 
     function handleAllMoviesClick(event) {
         event.preventDefault();
+        setFilter(false);
         handleAllMovies(true);
     }
 
     function handleHomeClicked(event) {
+        setFilter(false);
         event.preventDefault();
         handleAllMovies(false);
         setSearchTerm('');
         onClearSearch();
+    }
+
+    function handleFilter() {
+        setFilter(true);
     }
 
     return (
@@ -30,7 +36,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
             <input placeholder="Search Movies" type="text" onChange={handleSearch} className="search-input" value={term}></input>
             <a className="navbar-a" href="#" onClick={handleHomeClicked}>Home</a>
             <a className="navbar-a" href="#" onClick={handleAllMoviesClick}>All Movies</a>
-            <a className="navbar-a" href="#">Filter</a>
+            <a className="navbar-a" href="#" onClick={handleFilter}>Filter</a>
             <div className='login-signup'>
                 <button className="login-btn">Login</button>
                 <button className="sign-btn">Sign up</button>

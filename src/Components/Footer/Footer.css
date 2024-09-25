@@ -60,3 +60,7 @@
     gap: 6px;
     font-size: 1rem;
 }
+
+.social-icons a {
+    color: inherit;
+}

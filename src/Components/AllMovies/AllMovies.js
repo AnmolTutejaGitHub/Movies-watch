@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import SearchResultDiv from '../SearchBar/SearchResultDiv';
 import './AllMovies.css';
+import Margin from '../Margin/Margin';
+import Footer from '../Footer/Footer';
 
 function AllMovies({ GetSelectedMovie }) {
     const [allMovies, setAllMovies] = useState([]);
@@ -36,8 +38,11 @@ function AllMovies({ GetSelectedMovie }) {
 
     return (
         <div>
+            <Margin padding="50px" />
             <div className='allmoviesDiv'>{renderMovies}</div>
             <div onClick={loadMore} className='load-more'>Load More</div>
+            <Margin padding="20px" />
+            <Footer />
         </div>
     );
 }

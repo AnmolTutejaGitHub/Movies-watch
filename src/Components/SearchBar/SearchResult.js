@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SearchResultDiv from "./SearchResultDiv";
 import './SearchResult.css';
 import Margin from '../Margin/Margin';
+import Footer from '../Footer/Footer';
 
 function SearchResult({ term, GetSelectedMovie }) {
     const [searchResults, setSearchResults] = useState([]);
@@ -27,8 +28,9 @@ function SearchResult({ term, GetSelectedMovie }) {
         <div className="result-display">
             {searchResults.length > 0 && (
                 <>
-                    <Margin padding="150px" />
+                    <Margin padding="100px" />
                     <div className="result-holder">{renderMovies}</div>
+                    <Footer />
                 </>
             )}
         </div >
