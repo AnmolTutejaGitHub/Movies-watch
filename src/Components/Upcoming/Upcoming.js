@@ -7,10 +7,12 @@ import PopularDiv from "../Popular/PopularDiv";
 import '../Popular/Popular.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { Puff } from 'react-loader-spinner';
 
 function Upcoming({ GetSelectedMovie }) {
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
     const [movies, SetMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
     const totalPages = 3;
 
     async function fetchUpcoming() {
@@ -22,6 +24,7 @@ function Upcoming({ GetSelectedMovie }) {
             allMovies = allMovies.concat(data.results);
         }
 
+        setLoading(false);
         SetMovies(allMovies);
     }
     useEffect(() => {
@@ -41,26 +44,40 @@ function Upcoming({ GetSelectedMovie }) {
     }
 
     return (
-        <div>
-            <h2 className="popular-heading">Upcoming Movies</h2>
-            <Splide
-                options={{
-                    rewind: true, perPage: 6.5, breakpoints: {
-                        768: {
-                            perPage: 2
-                        },
-                        1024: {
-                            perPage: 4
-                        }, 500: {
-                            perPage: 1
+        <>
+            {loading && <div className="loader-container">
+                <Puff
+                    visible={true}
+                    height="80"
+                    width="80"
+                    color="#4fa94d"
+                    ariaLabel="puff-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                />
+            </div>}
+            {!loading && <div>
+                <h2 className="popular-heading">Upcoming Movies</h2>
+                <Splide
+                    options={{
+                        rewind: true, perPage: 6.5, breakpoints: {
+                            768: {
+                                perPage: 2
+                            },
+                            1024: {
+                                perPage: 4
+                            }, 500: {
+                                perPage: 1
+                            }
                         }
-                    }
-                }}
-                aria-label="Upcoming Movies"
-            >
-                {renderUpcoming}
-            </Splide>
-        </div>
+                    }}
+                    aria-label="Upcoming Movies"
+                >
+                    {renderUpcoming}
+                </Splide>
+            </div>}
+        </>
+
     );
 }
 

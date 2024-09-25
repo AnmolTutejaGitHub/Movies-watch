@@ -6,7 +6,7 @@ import PopularDiv from '../Popular/PopularDiv';
 import '../Popular/PopularDiv.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { Puff } from 'react-loader-spinner'
+import { Puff } from 'react-loader-spinner';
 
 function Trending({ GetSelectedMovie }) {
     const [movies, setMovies] = useState([]);
@@ -43,15 +43,17 @@ function Trending({ GetSelectedMovie }) {
 
     return (
         <>
-            {loading && <Puff
-                visible={true}
-                height="80"
-                width="80"
-                color="#4fa94d"
-                ariaLabel="puff-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-            />}
+            {loading && <div className="loader-container">
+                <Puff
+                    visible={true}
+                    height="80"
+                    width="80"
+                    color="#4fa94d"
+                    ariaLabel="puff-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                />
+            </div>}
 
             {!loading && <div>
                 <h2 className="popular-heading">Trending Movies</h2>
