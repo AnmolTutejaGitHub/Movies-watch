@@ -1,4 +1,7 @@
 ```
+    if you are in India or site is not showing any data use VPN
+```
+```
     npm start
 ```
 

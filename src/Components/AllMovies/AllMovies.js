@@ -24,6 +24,7 @@ function AllMovies({ GetSelectedMovie }) {
     }
 
     const renderMovies = allMovies.filter(movie => movie.poster_path).map((movie) => {
+        //console.log(movie);
         return (
             <SearchResultDiv
                 key={movie.id}
