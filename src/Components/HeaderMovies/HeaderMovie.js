@@ -10,7 +10,7 @@ function HeaderMovie({ movie, GetSelectedMovie }) {
             backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100%',
+            height: '700px',
         }}>
 
             <div className="header-details">

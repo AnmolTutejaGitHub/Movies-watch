@@ -11,3 +11,7 @@ for video streaming using vidsrc (can give result based on tmdb id):
 ```
     https://vidsrc.xyz/embed/movie?tmdb=${selectedMovie.id}
 ```
+
+```
+    https://movies-watch-rho.vercel.app/
+```

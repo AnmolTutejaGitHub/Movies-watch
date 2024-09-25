@@ -10,6 +10,7 @@ import Genre from "../Components/Genre/Genre";
 import Footer from "../Components/Footer/Footer";
 import HeaderMovies from "../Components/HeaderMovies/HeaderMovies";
 import { IoClose } from "react-icons/io5";
+import Margin from '../Components/Margin/Margin';
 
 // https://splidejs.com/ for slide show
 
@@ -39,25 +40,24 @@ function App() {
                 <br /><br /><br />
 
                 {!search && <div>
-                    <br /><br />
                     <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Popular GetSelectedMovie={GetSelectedMovie} />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Trending GetSelectedMovie={GetSelectedMovie} />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <TopRated GetSelectedMovie={GetSelectedMovie} />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="War" />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="Documentary" />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="History" />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Genre GetSelectedMovie={GetSelectedMovie} Genre="Horror" />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Upcoming />
-                    <br /><br /><br />
+                    <Margin padding="80px" />
                     <Footer />
                 </div>}
             </div>

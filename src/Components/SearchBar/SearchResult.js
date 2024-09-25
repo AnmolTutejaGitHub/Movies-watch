@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import SearchResultDiv from "./SearchResultDiv";
 import './SearchResult.css';
+import Margin from '../Margin/Margin';
 
 function SearchResult({ term, GetSelectedMovie }) {
     const [searchResults, setSearchResults] = useState([]);
@@ -24,8 +25,13 @@ function SearchResult({ term, GetSelectedMovie }) {
 
     return (
         <div className="result-display">
-            {searchResults !== [] && <div className="result-holder">{renderMovies}</div>}
-        </div>
+            {searchResults.length > 0 && (
+                <>
+                    <Margin padding="150px" />
+                    <div className="result-holder">{renderMovies}</div>
+                </>
+            )}
+        </div >
     );
 }
 export default SearchResult;

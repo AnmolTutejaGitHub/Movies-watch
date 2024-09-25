@@ -7,7 +7,7 @@ import { TbRating18Plus } from "react-icons/tb";
 
 
 function OpenMovie({ selectedMovie }) {
-    console.log(selectedMovie);
+    //console.log(selectedMovie);
     const release_date_string = selectedMovie.release_date || "";
     const monthmap = {
         '01': 'Jan',
