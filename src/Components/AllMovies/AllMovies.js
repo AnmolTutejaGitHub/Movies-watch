@@ -13,7 +13,7 @@ function AllMovies({ GetSelectedMovie }) {
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
     async function fetchMovies() {
         const response = await fetch(
-            `https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${pages}`
+            `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${pages}`
         );
         const data = await response.json();
         setAllMovies([...allMovies, ...data.results]);
