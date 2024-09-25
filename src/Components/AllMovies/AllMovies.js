@@ -3,10 +3,12 @@ import SearchResultDiv from '../SearchBar/SearchResultDiv';
 import './AllMovies.css';
 import Margin from '../Margin/Margin';
 import Footer from '../Footer/Footer';
+import { Puff } from 'react-loader-spinner';
 
 function AllMovies({ GetSelectedMovie }) {
     const [allMovies, setAllMovies] = useState([]);
     const [pages, setPages] = useState(1);
+    const [loading, setLoading] = useState(true);
 
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
     async function fetchMovies() {
@@ -37,13 +39,28 @@ function AllMovies({ GetSelectedMovie }) {
     });
 
     return (
-        <div>
-            <Margin padding="50px" />
-            <div className='allmoviesDiv'>{renderMovies}</div>
-            <div onClick={loadMore} className='load-more'>Load More</div>
-            <Margin padding="20px" />
-            <Footer />
-        </div>
+        <>
+            {loading &&
+                <div className="loader-container">
+                    <Puff
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="grey"
+                        ariaLabel="puff-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    />
+                </div>
+            }
+            {!loading && <div>
+                <Margin padding="50px" />
+                <div className='allmoviesDiv'>{renderMovies}</div>
+                <div onClick={loadMore} className='load-more'>Load More</div>
+                <Margin padding="20px" />
+                <Footer />
+            </div>}
+        </>
     );
 }
 
