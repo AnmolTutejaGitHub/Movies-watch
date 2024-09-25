@@ -64,3 +64,10 @@
 .social-icons a {
     color: inherit;
 }
+
+@media(max-width:500px) {
+    .footer {
+        font-size: 14px;
+        gap: 7px;
+    }
+}

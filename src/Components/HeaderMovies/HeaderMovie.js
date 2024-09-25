@@ -15,7 +15,7 @@ function HeaderMovie({ movie, GetSelectedMovie }) {
 
             <div className="header-details">
                 <h1>{movie.title}</h1>
-                <p>{movie.overview}</p>
+                <p className="movie-overview">{movie.overview}</p>
                 <button onClick={handleClick} className='cursor-pointer'> <FaCirclePlay className='play-movie' /> Watch</button>
             </div>
         </div >

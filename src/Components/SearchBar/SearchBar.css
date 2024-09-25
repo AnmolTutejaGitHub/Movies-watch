@@ -68,3 +68,18 @@
 input::placeholder {
     color: rgb(202, 200, 200);
 }
+
+/* will make navbar for mobileview soon */
+@media(max-width:900px) {
+    .navbar-a {
+        visibility: hidden;
+    }
+
+    .login-signup {
+        visibility: hidden;
+    }
+
+    .navigation {
+        padding: 1rem;
+    }
+}

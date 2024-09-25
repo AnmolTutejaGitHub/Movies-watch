@@ -51,6 +51,9 @@ function Popular({ GetSelectedMovie }) {
                         },
                         1024: {
                             perPage: 4
+                        },
+                        500: {
+                            perPage: 1
                         }
                     }
                 }}

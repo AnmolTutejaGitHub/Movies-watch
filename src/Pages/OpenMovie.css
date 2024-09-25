@@ -68,3 +68,9 @@
 .pointer-cursor {
     cursor: pointer;
 }
+
+@media(max-width:500px) {
+    .right {
+        padding: 0.5rem;
+    }
+}
