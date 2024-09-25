@@ -17,6 +17,7 @@ function AllMovies({ GetSelectedMovie }) {
         );
         const data = await response.json();
         setAllMovies([...allMovies, ...data.results]);
+        setLoading(false);
     }
 
     useEffect(() => {
