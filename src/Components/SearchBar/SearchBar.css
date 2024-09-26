@@ -69,17 +69,61 @@ input::placeholder {
     color: rgb(202, 200, 200);
 }
 
-/* will make navbar for mobileview soon */
+.bars {
+    display: none;
+}
+
 @media(max-width:780px) {
-    .navbar-a {
-        visibility: hidden;
+
+    .bars {
+        display: block;
     }
 
-    .login-signup {
-        visibility: hidden;
+    /* Bars ==false */
+    .navbar-a-bars-false {
+        display: none;
     }
 
-    .navigation {
-        padding: 1rem;
+    .login-signup-bars-false {
+        display: none;
+    }
+
+    .navigation-bars-false {
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .search-input-bars-false {
+        width: 40%;
+    }
+
+
+    /* Bars==true */
+    .navigation-bars-true {
+        flex-direction: column;
+        height: 100vh;
+        backdrop-filter: blur(80px);
+        -webkit-backdrop-filter: blur(80px);
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - (2 * 2.25rem));
+    }
+
+    .login-signup-bars-true {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .search-input-bars-true {
+        width: 70%;
+    }
+
+    .bars-bars-true {
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 }
