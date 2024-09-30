@@ -13,7 +13,8 @@ import { IoClose } from "react-icons/io5";
 import Margin from '../Components/Margin/Margin';
 import AllMovies from "../Components/AllMovies/AllMovies";
 import Filter from '../Pages/Filter/Filter';
-import { Puff } from 'react-loader-spinner'
+import { Puff } from 'react-loader-spinner';
+import LoginSignUp from "../Components/loginSignup/loginSignUp";
 
 // https://cors-anywhere.herokuapp.com/ as proxy 
 
@@ -24,6 +25,9 @@ function App() {
     const [search, setSearch] = useState(false);
     const [AllMoviesClicked, setAllMoviesClicked] = useState(false);
     const [filter, setFilter] = useState(false);
+    const [user, setUser] = useState('');
+    const [login, setLogin] = useState(false);
+    const [signup, setSignUp] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -50,10 +54,34 @@ function App() {
     function SetFilter(set) {
         setFilter(set);
     }
+
+    function handleUserDisplay(username) {
+        setUser(username);
+    }
+
+    function loginSetter(_bool) {
+        setLogin(_bool);
+    }
+
+    function signupSetter(_bool) {
+        setSignUp(_bool);
+    }
+
+    function handleSubmit() {
+        setLogin(false);
+        setSignUp(false);
+    }
+
     return (
         <div>
             <div className="landing-page">
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} />
+
+
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} user={user} loginSetter={loginSetter} signupSetter={signupSetter} >
+                    {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
+                    {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
+                </SearchBarPage>
+
                 <br /><br /><br />
 
                 {filter &&
@@ -99,6 +127,7 @@ function App() {
             }
 
             {AllMoviesClicked && !filter && <AllMovies GetSelectedMovie={GetSelectedMovie} />}
+
         </div >
     );
 }

@@ -1,0 +1,41 @@
+.user {
+    border: 1px solid white;
+    box-sizing: border-box;
+    width: auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.user form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+
+.user form input {
+    outline: none;
+    background: rgba(134, 132, 132, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.5px solid white;
+    border-radius: 5px;
+    color: white;
+}
+
+.user form button {
+    padding: 0.3rem 0.5rem;
+    outline: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+}

@@ -3,7 +3,7 @@ import './SearchBar.css';
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
-function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter }) {
+function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter, user, signupSetter, loginSetter, children }) {
 
     const [Bars, setBars] = useState(false);
 
@@ -45,6 +45,16 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         setBars(!Bars);
     }
 
+    function handleLogin() {
+        loginSetter(true);
+        signupSetter(false);
+    }
+
+    function handleSignup() {
+        signupSetter(true);
+        loginSetter(false);
+    }
+
     return (
         <div className={`navigation nav-bar ${Bars ? "navigation-bars-true" : "navigation-bars-false"}`}>
             <a className="navbar-a logo" href="#">CineRealize</a>
@@ -52,10 +62,21 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleHomeClicked}>Home</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleAllMoviesClick}>All Movies</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleFilter}>Filter</a>
-            <div className={`login-signup ${Bars ? "login-signup-bars-true" : "login-signup-bars-false"}`}>
-                <button className="login-btn" >Login</button>
-                <button className="sign-btn">Sign up</button>
-            </div>
+
+
+            {user.trim() == '' && <div className={`login-signup ${Bars ? "login-signup-bars-true" : "login-signup-bars-false"}`}>
+                <button className="login-btn" onClick={handleLogin}>Login</button>
+                <button className="sign-btn" onClick={handleSignup}>Sign up</button>
+                <div className='user-form'>
+                    {children}
+                </div>
+            </div>}
+
+            {
+                user && <div>{user}</div>
+            }
+
+
             {!Bars && <FaBars className={`bars ${Bars ? "bars-bars-true" : ""}`} onClick={handleBarsClick} />}
             {Bars && <IoClose className={`bars ${Bars ? "bars-bars-true" : ""}`} onClick={handleBarsClick} />}
         </div >

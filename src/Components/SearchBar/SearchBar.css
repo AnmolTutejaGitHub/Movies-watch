@@ -73,6 +73,11 @@ input::placeholder {
     display: none;
 }
 
+.user-form {
+    position: fixed;
+    top: 100%;
+}
+
 @media(max-width:780px) {
 
     .bars {
@@ -103,18 +108,22 @@ input::placeholder {
     /* Bars==true */
     .navigation-bars-true {
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
         backdrop-filter: blur(80px);
         -webkit-backdrop-filter: blur(80px);
         gap: 3rem;
         justify-content: center;
         align-items: center;
         width: calc(100vw - (2 * 2.25rem));
+        overflow-y: auto;
+        overflow-x: auto;
     }
 
     .login-signup-bars-true {
         flex-direction: column;
         gap: 0.4rem;
+
     }
 
     .search-input-bars-true {
@@ -125,5 +134,10 @@ input::placeholder {
         position: absolute;
         top: 20px;
         right: 20px;
+    }
+
+    .user-form {
+        position: relative;
+        top: 80%;
     }
 }
