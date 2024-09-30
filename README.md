@@ -34,3 +34,8 @@ Deployment :
 
 To use signup/login you can only do it locally :
 after running the server
+```
+    npm start
+    npm start server
+    json-server --watch db.json --port 3001
+```

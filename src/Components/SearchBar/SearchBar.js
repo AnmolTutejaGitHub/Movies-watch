@@ -68,6 +68,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
     function handleWatchList() {
         toggleWatchList(true);
         setFilter(false);
+        setSearchTerm('');
     }
 
     function signOut(e) {

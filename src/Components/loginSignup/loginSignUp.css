@@ -39,3 +39,11 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     cursor: pointer;
 }
+
+.cross {
+    font-size: 8px;
+    position: absolute;
+    top: 3px;
+    right: 15px;
+    cursor: pointer;
+}

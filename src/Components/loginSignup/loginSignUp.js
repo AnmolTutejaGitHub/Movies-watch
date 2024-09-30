@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import './loginSignUp.css';
+import { ImCross } from "react-icons/im";
 
 function LoginSignUp({ type, onClick, onSubmitBtn }) {
     const [user, setUser] = useState('');
@@ -65,8 +66,14 @@ function LoginSignUp({ type, onClick, onSubmitBtn }) {
         onSubmitBtn();
     }
 
+
+    function closeLoginSignup() {
+        onSubmitBtn();
+    }
+
     return (
         <div className='user'>
+            <ImCross className='cross' onClick={closeLoginSignup} />
             <div>{type}</div>
             <form onSubmit={validate} id="loginsignupform">
                 <div>
