@@ -36,20 +36,29 @@ function LoginSignUp({ type, onClick, onSubmitBtn }) {
             if (User) {
                 alert("Login successful");
                 handleClick();
-                //return true;
             } else {
                 alert("Invalid credentials");
-                //return false;
             }
         }
 
         if (type === "signup") {
-            await axios.post('http://localhost:3001/users', {
-                user: user,
-                password: password
-            });
-            alert("Signup successful");
-            handleClick();
+            const response = await axios.get('http://localhost:3001/users');
+            const users = response.data;
+
+            const User = users.find(u => u.user.trim() === user.trim());
+
+            if (!User) {
+                await axios.post('http://localhost:3001/users', {
+                    user: user,
+                    password: password,
+                    watchList: []
+                });
+                alert("Signup successful");
+                handleClick();
+            }
+            else {
+                alert("username already exist in db!");
+            }
         }
 
 

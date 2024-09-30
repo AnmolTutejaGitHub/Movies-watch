@@ -5,7 +5,7 @@ import './SearchResult.css';
 import Margin from '../Margin/Margin';
 import Footer from '../Footer/Footer';
 
-function SearchResult({ term, GetSelectedMovie }) {
+function SearchResult({ term, GetSelectedMovie, user }) {
     const [searchResults, setSearchResults] = useState([]);
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
 
@@ -20,7 +20,7 @@ function SearchResult({ term, GetSelectedMovie }) {
     }, [term])
 
     const renderMovies = searchResults.filter(movie => movie.poster_path).map((movie) => {
-        return <SearchResultDiv key={movie.id} movie={movie} GetSelectedMovie={GetSelectedMovie} />;
+        return <SearchResultDiv key={movie.id} movie={movie} GetSelectedMovie={GetSelectedMovie} user={user} />;
     });
 
 

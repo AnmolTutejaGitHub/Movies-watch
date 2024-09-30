@@ -5,7 +5,7 @@ import Margin from '../Margin/Margin';
 import Footer from '../Footer/Footer';
 import { Puff } from 'react-loader-spinner';
 
-function AllMovies({ GetSelectedMovie }) {
+function AllMovies({ GetSelectedMovie, user }) {
     const [allMovies, setAllMovies] = useState([]);
     const [pages, setPages] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -35,6 +35,7 @@ function AllMovies({ GetSelectedMovie }) {
                 key={movie.id}
                 movie={movie}
                 GetSelectedMovie={GetSelectedMovie}
+                user={user}
             />
         );
     });

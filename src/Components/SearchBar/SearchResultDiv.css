@@ -8,3 +8,10 @@
 .movie-div img {
     border-radius: 10px;
 }
+
+.addToWatchlist {
+    font-size: 40px;
+    color: grey;
+    position: relative;
+    left: -12%;
+}

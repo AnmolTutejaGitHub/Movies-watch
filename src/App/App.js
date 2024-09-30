@@ -15,6 +15,7 @@ import AllMovies from "../Components/AllMovies/AllMovies";
 import Filter from '../Pages/Filter/Filter';
 import { Puff } from 'react-loader-spinner';
 import LoginSignUp from "../Components/loginSignup/loginSignUp";
+import Watchlist from "../Components/watchlist/Watchlist";
 
 // https://cors-anywhere.herokuapp.com/ as proxy 
 
@@ -28,6 +29,7 @@ function App() {
     const [user, setUser] = useState('');
     const [login, setLogin] = useState(false);
     const [signup, setSignUp] = useState(false);
+    const [watchList, setWatchList] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -72,12 +74,16 @@ function App() {
         setSignUp(false);
     }
 
+    function toggleWatchList() {
+        setWatchList(!watchList);
+    }
+
     return (
         <div>
             <div className="landing-page">
 
 
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} user={user} loginSetter={loginSetter} signupSetter={signupSetter} >
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList}>
                     {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                     {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                 </SearchBarPage>
@@ -93,7 +99,11 @@ function App() {
                     )
                 }
 
-                {!search && !filter && !AllMoviesClicked && <div>
+                {
+                    watchList && <Watchlist user={user} GetSelectedMovie={GetSelectedMovie} />
+                }
+
+                {!search && !filter && !AllMoviesClicked && !watchList && <div>
                     <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
                     <Margin padding="80px" />
                     <Popular GetSelectedMovie={GetSelectedMovie} />
@@ -126,7 +136,7 @@ function App() {
             )
             }
 
-            {AllMoviesClicked && !filter && <AllMovies GetSelectedMovie={GetSelectedMovie} />}
+            {AllMoviesClicked && !filter && !watchList && <AllMovies GetSelectedMovie={GetSelectedMovie} user={user} />}
 
         </div >
     );

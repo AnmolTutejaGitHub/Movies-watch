@@ -1,124 +1,91 @@
 {
   "users": [
     {
-      "id": "b3a0",
-      "user": "Anmol",
-      "password": "Tuteja"
-    },
-    {
-      "id": "8a57",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "b139",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "ca26",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "4cf5",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "4c6f",
-      "user": "Anmol",
-      "password": "1234567"
-    },
-    {
-      "id": "e5ea",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "5cf1",
-      "user": "Anmol",
-      "password": "tuteja"
-    },
-    {
-      "id": "903e",
-      "user": "1234",
-      "password": "1234"
-    },
-    {
-      "id": "89fe",
-      "user": "1234",
-      "password": "1234"
-    },
-    {
-      "id": "3c04",
-      "user": "1234",
-      "password": "1234"
-    },
-    {
-      "id": "2321",
-      "user": "",
-      "password": ""
-    },
-    {
-      "id": "46b3",
-      "user": "",
-      "password": ""
-    },
-    {
-      "id": "241a",
-      "user": "Anmol",
-      "password": "qq"
-    },
-    {
-      "id": "7189",
-      "user": "Anmol",
-      "password": "sqjqslgsql"
-    },
-    {
-      "id": "eb41",
-      "user": "ww",
-      "password": "112"
-    },
-    {
-      "id": "cdf7",
-      "user": "Anmol",
-      "password": "Tuteja"
-    },
-    {
-      "id": "cac4",
-      "user": "Anmol",
-      "password": "1234567"
-    },
-    {
-      "id": "2883",
-      "user": "",
-      "password": ""
-    },
-    {
-      "id": "8833",
-      "user": "",
-      "password": ""
-    },
-    {
-      "id": "5570",
-      "user": "qqqw",
-      "password": "q"
-    },
-    {
-      "id": "aa30",
-      "user": "",
-      "password": ""
-    },
-    {
-      "id": "a640",
-      "user": "23",
-      "password": "123"
-    },
-    {
-      "id": "fdd9",
-      "user": "",
-      "password": ""
+      "id": "7153",
+      "user": "Anmol123",
+      "password": "123",
+      "watchList": [
+        {
+          "adult": false,
+          "backdrop_path": "/Asg2UUwipAdE87MxtJy7SQo08XI.jpg",
+          "genre_ids": [
+            28,
+            14,
+            27
+          ],
+          "id": 957452,
+          "original_language": "en",
+          "original_title": "The Crow",
+          "overview": "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
+          "popularity": 2511.914,
+          "poster_path": "/58QT4cPJ2u2TqWZkterDq9q4yxQ.jpg",
+          "release_date": "2024-08-21",
+          "title": "The Crow",
+          "video": false,
+          "vote_average": 5.421,
+          "vote_count": 431
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            35,
+            28
+          ],
+          "id": 519182,
+          "original_language": "en",
+          "original_title": "Despicable Me 4",
+          "overview": "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
+          "popularity": 2035.095,
+          "poster_path": "/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+          "release_date": "2024-06-20",
+          "title": "Despicable Me 4",
+          "video": false,
+          "vote_average": 7.163,
+          "vote_count": 1780
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7h6TqPB3ESmjuVbxCxAeB1c9OB1.jpg",
+          "genre_ids": [
+            27,
+            35,
+            18
+          ],
+          "id": 933260,
+          "original_language": "en",
+          "original_title": "The Substance",
+          "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+          "popularity": 1233.556,
+          "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+          "release_date": "2024-09-07",
+          "title": "The Substance",
+          "video": false,
+          "vote_average": 7.193,
+          "vote_count": 166
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/blqiNjJefmY10Wx6y2vgJJWljJj.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 949484,
+          "original_language": "en",
+          "original_title": "Hounds of War",
+          "overview": "After a mission goes wrong, only one of a group of mercenaries is left alive to avenge his fallen brothers.",
+          "popularity": 1222.988,
+          "poster_path": "/lRBT73EWsiQPuqK3YS3BnBW0Zwi.jpg",
+          "release_date": "2024-08-29",
+          "title": "Hounds of War",
+          "video": false,
+          "vote_average": 6.434,
+          "vote_count": 53
+        }
+      ]
     }
   ]
 }
