@@ -3,4 +3,11 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 4rem;
+    margin-top: 100px;
+}
+
+.watchlist-delete-btn {
+    position: relative;
+    top: -97%;
+    cursor: pointer;
 }

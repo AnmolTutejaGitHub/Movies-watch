@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import SearchResultDiv from "../SearchBar/SearchResultDiv";
 import './watchlist.css';
+import { ImCross } from "react-icons/im";
 
 function Watchlist({ user, GetSelectedMovie }) {
     const [logined, setLogined] = useState(false);
@@ -27,12 +28,31 @@ function Watchlist({ user, GetSelectedMovie }) {
         }
     }
 
+    async function deleteFromWatchlist(movie) {
+        const response = await axios.get('http://localhost:3001/users');
+        const users = response.data;
+        const userToUpdate = users.find(u => u.user === user);
+        const updatedWatchlist = userToUpdate.watchList.filter(m => m.id !== movie.id);
+
+        await axios.put(`http://localhost:3001/users/${userToUpdate.id}`, {
+            ...userToUpdate,
+            watchList: updatedWatchlist
+        });
+        setWatchlist(updatedWatchlist);
+    }
+
     return (
-        <div class="watchlists-div">
-            {watchlist.map((movie) => (
-                <SearchResultDiv key={movie.id} movie={movie} user="" GetSelectedMovie={GetSelectedMovie} />
-            ))}
-        </div>
+        <div className="watchlists-div">
+            {watchlist === [] && <p>Watchlist is empty</p>}
+            {watchlist != [] &&
+                watchlist.map((movie) => (
+                    <div key={movie.id} className="watchlist-div">
+                        <SearchResultDiv movie={movie} user="" GetSelectedMovie={GetSelectedMovie} />
+                        <ImCross onClick={() => deleteFromWatchlist(movie)} className="watchlist-delete-btn"></ImCross>
+                    </div>
+                ))
+            }
+        </div >
     );
 }
 

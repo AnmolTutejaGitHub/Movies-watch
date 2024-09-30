@@ -2,10 +2,17 @@ import { useState } from 'react';
 import './SearchBar.css';
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa6";
+import { FaSignOutAlt } from "react-icons/fa";
 
-function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter, user, signupSetter, loginSetter, children, toggleWatchList }) {
+function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter, user, signupSetter, loginSetter, children, toggleWatchList, SetUser }) {
 
     const [Bars, setBars] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+    };
 
     function handleSearch(event) {
         const value = event.target.value;
@@ -24,7 +31,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         event.preventDefault();
         setFilter(false);
         handleAllMovies(true);
-        toggleWatchList();
+        toggleWatchList(false);
         setSearchTerm('');
     }
 
@@ -32,16 +39,15 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         event.preventDefault();
         setFilter(false);
         handleAllMovies(false);
-        toggleWatchList();
+        toggleWatchList(false);
         setSearchTerm('');
         onClearSearch();
     }
 
     function handleFilter() {
         setFilter(true);
-        toggleWatchList();
+        toggleWatchList(false);
         setSearchTerm('');
-        toggleWatchList();
     }
 
 
@@ -60,8 +66,13 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
     }
 
     function handleWatchList() {
-        toggleWatchList();
+        toggleWatchList(true);
         setFilter(false);
+    }
+
+    function signOut(e) {
+        e.stopPropagation();
+        SetUser("");
     }
 
     return (
@@ -83,7 +94,16 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
             </div>}
 
             {
-                user && <div>{user}</div>
+                user &&
+                <>
+                    <div onClick={toggleVisibility} >
+                        {user}{" "}
+                        <FaAngleDown />
+                        {isVisible && <div className="sign-out" onClick={signOut}>
+                            <FaSignOutAlt />
+                            Sign Out</div>}
+                    </div>
+                </>
             }
 
 

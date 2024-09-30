@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "7153",
+      "id": "3130",
       "user": "Anmol123",
       "password": "123",
       "watchList": [
@@ -27,6 +27,26 @@
         },
         {
           "adult": false,
+          "backdrop_path": "/9SSEUrSqhljBMzRe4aBTh17rUaC.jpg",
+          "genre_ids": [
+            27,
+            878,
+            28
+          ],
+          "id": 945961,
+          "original_language": "en",
+          "original_title": "Alien: Romulus",
+          "overview": "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
+          "popularity": 669.036,
+          "poster_path": "/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
+          "release_date": "2024-08-13",
+          "title": "Alien: Romulus",
+          "video": false,
+          "vote_average": 7.067,
+          "vote_count": 1091
+        },
+        {
+          "adult": false,
           "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
           "genre_ids": [
             16,
@@ -45,45 +65,33 @@
           "video": false,
           "vote_average": 7.163,
           "vote_count": 1780
-        },
+        }
+      ]
+    },
+    {
+      "id": "cb13",
+      "user": "q2",
+      "password": "123",
+      "watchList": [
         {
           "adult": false,
-          "backdrop_path": "/7h6TqPB3ESmjuVbxCxAeB1c9OB1.jpg",
-          "genre_ids": [
-            27,
-            35,
-            18
-          ],
-          "id": 933260,
-          "original_language": "en",
-          "original_title": "The Substance",
-          "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
-          "popularity": 1233.556,
-          "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
-          "release_date": "2024-09-07",
-          "title": "The Substance",
-          "video": false,
-          "vote_average": 7.193,
-          "vote_count": 166
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/blqiNjJefmY10Wx6y2vgJJWljJj.jpg",
+          "backdrop_path": "/Asg2UUwipAdE87MxtJy7SQo08XI.jpg",
           "genre_ids": [
             28,
-            53
+            14,
+            27
           ],
-          "id": 949484,
+          "id": 957452,
           "original_language": "en",
-          "original_title": "Hounds of War",
-          "overview": "After a mission goes wrong, only one of a group of mercenaries is left alive to avenge his fallen brothers.",
-          "popularity": 1222.988,
-          "poster_path": "/lRBT73EWsiQPuqK3YS3BnBW0Zwi.jpg",
-          "release_date": "2024-08-29",
-          "title": "Hounds of War",
+          "original_title": "The Crow",
+          "overview": "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
+          "popularity": 2511.914,
+          "poster_path": "/58QT4cPJ2u2TqWZkterDq9q4yxQ.jpg",
+          "release_date": "2024-08-21",
+          "title": "The Crow",
           "video": false,
-          "vote_average": 6.434,
-          "vote_count": 53
+          "vote_average": 5.421,
+          "vote_count": 431
         }
       ]
     }

@@ -34,7 +34,7 @@ function LoginSignUp({ type, onClick, onSubmitBtn }) {
             const User = users.find(u => u.user.trim() === user.trim() && u.password.trim() === password.trim());
 
             if (User) {
-                alert("Login successful");
+                //alert("Login successful");
                 handleClick();
             } else {
                 alert("Invalid credentials");

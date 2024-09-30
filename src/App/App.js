@@ -74,8 +74,12 @@ function App() {
         setSignUp(false);
     }
 
-    function toggleWatchList() {
-        setWatchList(!watchList);
+    function toggleWatchList(_bool) {
+        setWatchList(_bool);
+    }
+
+    function SetUser(user) {
+        setUser(user);
     }
 
     return (
@@ -83,7 +87,7 @@ function App() {
             <div className="landing-page">
 
 
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList}>
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser}>
                     {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                     {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                 </SearchBarPage>

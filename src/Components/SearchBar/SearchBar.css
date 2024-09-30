@@ -141,3 +141,14 @@ input::placeholder {
         top: 80%;
     }
 }
+
+
+.sign-out {
+    position: absolute;
+    color: white;
+    border: 1px dotted white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}

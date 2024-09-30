@@ -30,3 +30,7 @@ Deployment :
 ```
     https://movies-watch-rho.vercel.app/
 ```
+
+
+To use signup/login you can only do it locally :
+after running the server
