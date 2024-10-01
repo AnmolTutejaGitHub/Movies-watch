@@ -82,6 +82,10 @@ function App() {
         setUser(user);
     }
 
+    function isLoggedIn() {
+        return user.trim() != '';
+    }
+
     return (
         <div>
             <div className="landing-page">
@@ -104,7 +108,7 @@ function App() {
                 }
 
                 {
-                    watchList && <Watchlist user={user} GetSelectedMovie={GetSelectedMovie} />
+                    watchList && <Watchlist user={user} GetSelectedMovie={GetSelectedMovie} isLoggedIn={isLoggedIn} />
                 }
 
                 {!search && !filter && !AllMoviesClicked && !watchList && <div>

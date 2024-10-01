@@ -4,7 +4,7 @@ import SearchResultDiv from "../SearchBar/SearchResultDiv";
 import './watchlist.css';
 import { ImCross } from "react-icons/im";
 
-function Watchlist({ user, GetSelectedMovie }) {
+function Watchlist({ user, GetSelectedMovie, isLoggedIn }) {
     const [logined, setLogined] = useState(false);
     const [watchlist, setWatchlist] = useState([]);
 
@@ -41,9 +41,12 @@ function Watchlist({ user, GetSelectedMovie }) {
         setWatchlist(updatedWatchlist);
     }
 
+    const loggedIn = isLoggedIn();
+
     return (
         <div className="watchlists-div">
-            {watchlist === [] && <p>Watchlist is empty</p>}
+            {watchlist.length == 0 && !loggedIn && <p>Please login first...</p>}
+            {watchlist.length == 0 && loggedIn && <p className="empty-watchlist">Watchlist is empty....</p>}
             {watchlist != [] &&
                 watchlist.map((movie) => (
                     <div key={movie.id} className="watchlist-div">

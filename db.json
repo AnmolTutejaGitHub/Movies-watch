@@ -4,69 +4,7 @@
       "id": "3130",
       "user": "Anmol123",
       "password": "123",
-      "watchList": [
-        {
-          "adult": false,
-          "backdrop_path": "/Asg2UUwipAdE87MxtJy7SQo08XI.jpg",
-          "genre_ids": [
-            28,
-            14,
-            27
-          ],
-          "id": 957452,
-          "original_language": "en",
-          "original_title": "The Crow",
-          "overview": "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
-          "popularity": 2511.914,
-          "poster_path": "/58QT4cPJ2u2TqWZkterDq9q4yxQ.jpg",
-          "release_date": "2024-08-21",
-          "title": "The Crow",
-          "video": false,
-          "vote_average": 5.421,
-          "vote_count": 431
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9SSEUrSqhljBMzRe4aBTh17rUaC.jpg",
-          "genre_ids": [
-            27,
-            878,
-            28
-          ],
-          "id": 945961,
-          "original_language": "en",
-          "original_title": "Alien: Romulus",
-          "overview": "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
-          "popularity": 669.036,
-          "poster_path": "/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
-          "release_date": "2024-08-13",
-          "title": "Alien: Romulus",
-          "video": false,
-          "vote_average": 7.067,
-          "vote_count": 1091
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
-          "genre_ids": [
-            16,
-            10751,
-            35,
-            28
-          ],
-          "id": 519182,
-          "original_language": "en",
-          "original_title": "Despicable Me 4",
-          "overview": "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
-          "popularity": 2035.095,
-          "poster_path": "/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
-          "release_date": "2024-06-20",
-          "title": "Despicable Me 4",
-          "video": false,
-          "vote_average": 7.163,
-          "vote_count": 1780
-        }
-      ]
+      "watchList": []
     },
     {
       "id": "cb13",
