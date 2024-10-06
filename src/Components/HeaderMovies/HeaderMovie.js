@@ -1,5 +1,5 @@
 import './headerMovie.css';
-import { FaCirclePlay } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa6";
 
 function HeaderMovie({ movie, GetSelectedMovie }) {
     function handleClick() {
@@ -16,7 +16,7 @@ function HeaderMovie({ movie, GetSelectedMovie }) {
             <div className="header-details">
                 <h1>{movie.title}</h1>
                 <p className="movie-overview">{movie.overview}</p>
-                <button onClick={handleClick} className='cursor-pointer'> <FaCirclePlay className='play-movie' /> Watch</button>
+                <button onClick={handleClick} className='cursor-pointer'> <FaPlay className='play-movie' /> Watch Now</button>
             </div>
         </div >
     );

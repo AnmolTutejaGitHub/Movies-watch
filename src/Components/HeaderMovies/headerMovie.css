@@ -17,11 +17,13 @@
 .header-movie button {
     background-color: white;
     color: black;
-    padding: 1rem 1.5rem;
+    padding: 15px 40px;
     border: none;
     outline: none;
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
 }
 
 .header-movie button:hover {
@@ -33,8 +35,8 @@
 }
 
 .play-movie {
-    font-size: 1.5rem;
-    margin-bottom: -0.3rem;
+    font-size: 1.15rem;
+    margin-bottom: -0.2rem;
     ;
 }
 
