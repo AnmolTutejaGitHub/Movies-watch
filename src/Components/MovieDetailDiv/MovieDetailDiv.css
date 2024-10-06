@@ -1,0 +1,78 @@
+.hover-div {
+    position: absolute;
+    width: 130%;
+    z-index: 999;
+    top: 0;
+    background-color: #040B08;
+    border-radius: 10px;
+}
+
+.hover-movie-detail {
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.hover-details {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hover-title {
+    padding: 10px;
+}
+
+.hover-details {
+    font-size: 12px;
+    color: gray;
+}
+
+.hover-lan {
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.hover-type {
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.hover-date {
+    padding-top: 13px;
+    font-size: 12px;
+}
+
+.hover-lan span {
+    color: gray;
+    padding-right: 10px;
+}
+
+.hover-type span {
+    color: gray;
+    padding-right: 10px;
+}
+
+.hover-date span {
+    color: gray;
+    padding-right: 10px;
+}
+
+.hover-watch-now-btn {
+    padding: 12px 40px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.hover-watch-now {
+    display: flex;
+    padding-top: 20px;
+    align-items: right;
+    padding-left: 40px;
+}

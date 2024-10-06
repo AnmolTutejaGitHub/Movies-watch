@@ -3,15 +3,15 @@
     overflow: hidden;
 }
 
-.popular-movie:hover {
+/* .popular-movie:hover {
     transform: scale(1.05);
     opacity: 0.8;
     background-color: rgb(51, 50, 50);
-}
+} */
 
-.popular-movie:hover img {
+/* .popular-movie:hover img {
     border-radius: 0;
-}
+} */
 
 .like {
     font-size: 1.5rem;
@@ -51,4 +51,13 @@
 
 .pd-10px {
     padding-left: 10px;
+}
+
+.popular-div {
+    display: flex;
+    gap: 1rem;
+}
+
+.hover-movie {
+    transition: transform 1s ease-in-out;
 }
