@@ -1,11 +1,24 @@
 .movie-div {
     padding-bottom: 5rem;
     border-radius: 10px;
-    cursor: pointer;
-
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    min-height: 0;
 }
 
 .movie-div img {
+    border-radius: 10px;
+}
+
+
+.movie-div img:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+    filter: blur(1px) brightness(0.9);
+}
+
+.search-result-img {
     border-radius: 10px;
 }
 
@@ -14,4 +27,36 @@
     color: grey;
     position: relative;
     left: -12%;
+}
+
+.movie-rating-star {
+    color: rgb(203, 160, 31);
+}
+
+.movie-rating {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    top: 10px;
+    z-index: 999;
+    font-size: 1.1rem;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.movie-btn {
+    background-color: white;
+    color: black;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9999;
+    bottom: 85px;
+    left: 70px;
 }
