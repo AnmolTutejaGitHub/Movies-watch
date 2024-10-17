@@ -4,7 +4,89 @@
       "id": "3130",
       "user": "Anmol123",
       "password": "123",
-      "watchList": []
+      "watchList": [
+        {
+          "adult": false,
+          "backdrop_path": "/7h6TqPB3ESmjuVbxCxAeB1c9OB1.jpg",
+          "genre_ids": [
+            878,
+            27,
+            35
+          ],
+          "id": 933260,
+          "original_language": "en",
+          "original_title": "The Substance",
+          "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+          "popularity": 1595.704,
+          "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+          "release_date": "2024-09-07",
+          "title": "The Substance",
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 227
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gHpTqPqSIC0jZ4J4QyXlVJ0yBcW.jpg",
+          "genre_ids": [
+            28,
+            80,
+            53
+          ],
+          "id": 1215162,
+          "original_language": "en",
+          "original_title": "Kill 'em All 2",
+          "overview": "Phillip and Suzanne are retired from the spy game, living peacefully off the grid. That's until their whereabouts are discovered by Vlad, the vengeful brother of their target from the first film.",
+          "popularity": 1369.344,
+          "poster_path": "/hgA5hN3NjNNSTXYOmAI6KNKOzbp.jpg",
+          "release_date": "2024-09-24",
+          "title": "Kill 'em All 2",
+          "video": false,
+          "vote_average": 6.97,
+          "vote_count": 67
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/zAqBIeO71BFL7bAtP5TFzVjVamy.jpg",
+          "genre_ids": [
+            10749,
+            18
+          ],
+          "id": 1079091,
+          "original_language": "en",
+          "original_title": "It Ends with Us",
+          "overview": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.",
+          "popularity": 1085.011,
+          "poster_path": "/cSMdFWmajaX4oUMLx7HEDI84GkP.jpg",
+          "release_date": "2024-08-07",
+          "title": "It Ends with Us",
+          "video": false,
+          "vote_average": 7.018,
+          "vote_count": 685
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/tAwfoDyKiYa4KQdUp3DTMrEs4En.jpg",
+          "genre_ids": [
+            16,
+            878,
+            12,
+            10751,
+            28
+          ],
+          "id": 698687,
+          "original_language": "en",
+          "original_title": "Transformers One",
+          "overview": "The untold origin story of Optimus Prime and Megatron, better known as sworn enemies, but once were friends bonded like brothers who changed the fate of Cybertron forever.",
+          "popularity": 704.262,
+          "poster_path": "/qbkAqmmEIZfrCO8ZQAuIuVMlWoV.jpg",
+          "release_date": "2024-09-11",
+          "title": "Transformers One",
+          "video": false,
+          "vote_average": 7.369,
+          "vote_count": 118
+        }
+      ]
     },
     {
       "id": "cb13",
