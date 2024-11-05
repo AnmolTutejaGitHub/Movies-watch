@@ -78,7 +78,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
 
     return (
         <div className={`navigation nav-bar ${Bars ? "navigation-bars-true" : "navigation-bars-false"}`}>
-            <a className="navbar-a logo" href="#">CineRealize</a>
+            <a className="navbar-a logo" href="#">Binged</a>
             <input placeholder="Search Movies" type="text" onChange={handleSearch} className={`search-input ${Bars ? "search-input-bars-true" : "search-input-bars-false"}`} value={term}></input>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleHomeClicked}>Home</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleAllMoviesClick}>All Movies</a>
