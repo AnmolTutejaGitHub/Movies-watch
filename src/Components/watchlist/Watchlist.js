@@ -19,25 +19,19 @@ function Watchlist({ user, GetSelectedMovie, isLoggedIn }) {
     }, []);
 
     async function renderWatchList() {
-        const response = await axios.get('http://localhost:3001/users');
-        const users = response.data;
-
-        const userToUpdate = users.find(u => u.user === user);
-        if (userToUpdate) {
-            setWatchlist(userToUpdate.watchList);
-        }
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/getWatchList`, {
+            username: user
+        });
+        setWatchlist(response.data);
     }
 
     async function deleteFromWatchlist(movie) {
-        const response = await axios.get('http://localhost:3001/users');
-        const users = response.data;
-        const userToUpdate = users.find(u => u.user === user);
-        const updatedWatchlist = userToUpdate.watchList.filter(m => m.id !== movie.id);
-
-        await axios.put(`http://localhost:3001/users/${userToUpdate.id}`, {
-            ...userToUpdate,
-            watchList: updatedWatchlist
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/delWatchList`, {
+            username: user,
+            movie_id: movie.id
         });
+
+        const updatedWatchlist = watchlist.filter(m => m.id !== movie.id);
         setWatchlist(updatedWatchlist);
     }
 

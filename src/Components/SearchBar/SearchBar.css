@@ -73,10 +73,10 @@ input::placeholder {
     display: none;
 }
 
-.user-form {
+/* .user-form {
     position: fixed;
     top: 100%;
-}
+} */
 
 @media(max-width:780px) {
 
@@ -136,10 +136,10 @@ input::placeholder {
         right: 20px;
     }
 
-    .user-form {
+    /* .user-form {
         position: relative;
         top: 80%;
-    }
+    } */
 }
 
 

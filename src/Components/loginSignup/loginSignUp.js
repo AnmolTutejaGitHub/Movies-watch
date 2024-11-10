@@ -6,6 +6,7 @@ import { ImCross } from "react-icons/im";
 function LoginSignUp({ type, onClick, onSubmitBtn }) {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     function handleUsernameChange(e) {
         setUser(e.target.value);
@@ -29,37 +30,30 @@ function LoginSignUp({ type, onClick, onSubmitBtn }) {
         }
 
         if (type === "login") {
-            const response = await axios.get('http://localhost:3001/users');
-            const users = response.data;
-
-            const User = users.find(u => u.user.trim() === user.trim() && u.password.trim() === password.trim());
-
-            if (User) {
-                //alert("Login successful");
-                handleClick();
-            } else {
-                alert("Invalid credentials");
+            try {
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+                    email: email,
+                    password: password,
+                    name: user
+                });
+                if (response.status == 200) handleClick();
+            } catch (e) {
+                alert("Invalid Credentials");
             }
         }
 
         if (type === "signup") {
-            const response = await axios.get('http://localhost:3001/users');
-            const users = response.data;
-
-            const User = users.find(u => u.user.trim() === user.trim());
-
-            if (!User) {
-                await axios.post('http://localhost:3001/users', {
-                    user: user,
+            try {
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signups`, {
+                    email: email,
                     password: password,
-                    watchList: []
+                    name: user
                 });
-                alert("Signup successful");
-                handleClick();
+                if (response.status == 200) handleClick();
+            } catch (e) {
+                alert("username or email already exists");
             }
-            else {
-                alert("username already exist in db!");
-            }
+
         }
 
 
@@ -71,19 +65,22 @@ function LoginSignUp({ type, onClick, onSubmitBtn }) {
         onSubmitBtn();
     }
 
+    function handleEmailChange(e) {
+        setEmail(e.target.value);
+    }
+
     return (
-        <div className='user'>
-            <ImCross className='cross' onClick={closeLoginSignup} />
-            <div>{type}</div>
-            <form onSubmit={validate} id="loginsignupform">
-                <div>
-                    <input type="text" value={user} onChange={handleUsernameChange} name="usr" placeholder="username..." />
-                </div>
-                <div>
-                    <input type="password" value={password} onChange={handlePasswordChange} name="pwd" placeholder="password..." />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
+        <div className='user-container'>
+            <div className='user'>
+                <ImCross className='cross' onClick={closeLoginSignup} />
+                <div className='auth-type'>{type}</div>
+                <form onSubmit={validate} id="loginsignupform">
+                    <input type="text" value={user} onChange={(e) => handleUsernameChange(e)} name="usr" placeholder="username..." />
+                    <input type="email" value={email} onChange={(e) => handleEmailChange(e)} name="emil" placeholder="Email..." />
+                    <input type="password" value={password} onChange={(e) => handlePasswordChange(e)} name="pwd" placeholder="password..." />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     );
 }

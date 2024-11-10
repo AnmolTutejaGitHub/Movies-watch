@@ -24,17 +24,14 @@ function SearchResultDiv({ movie, GetSelectedMovie, user }) {
             return;
         }
 
-        const response = await axios.get('http://localhost:3001/users');
-        const users = response.data;
-
-        const userToUpdate = users.find(u => u.user === user);
-
-        const AlreadyExists = userToUpdate.watchList.some(existingMovie => existingMovie.id === movie.id);
-        await axios.put(`http://localhost:3001/users/${userToUpdate.id}`, {
-            ...userToUpdate,
-            watchList: AlreadyExists ? userToUpdate.watchList : [...userToUpdate.watchList, movie]
+        const response = await axios.post('http://localhost:6969/addtoWatchlist', {
+            movie: movie,
+            user: user
         });
-        notify();
+
+        console.log(response);
+
+        alert("added to watchList")
     }
 
 

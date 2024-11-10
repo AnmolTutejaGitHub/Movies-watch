@@ -92,10 +92,9 @@ function App() {
 
 
                 <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser}>
-                    {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
-                    {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                 </SearchBarPage>
-
+                {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
+                {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                 <br /><br /><br />
 
                 {filter &&
