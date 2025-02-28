@@ -1,10 +1,12 @@
 .movie-div {
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
     width: auto;
     min-height: 0;
+    padding: 10px;
+    background-color: rgb(43, 42, 42);
 }
 
 .movie-div img {
@@ -59,4 +61,8 @@
     z-index: 9999;
     bottom: 85px;
     left: 70px;
+}
+
+.text-white {
+    color: white;
 }

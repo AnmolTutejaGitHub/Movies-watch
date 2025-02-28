@@ -49,6 +49,8 @@ function SearchResultDiv({ movie, GetSelectedMovie, user }) {
                 <div>{movie.vote_average.toFixed(1)}</div>
             </div>
 
+            <div>{movie.original_title}</div>
+
             {hover && user.trim() != '' && <>
                 <IoIosAddCircleOutline className="addToWatchlist" onClick={addToWatchList} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} />
             </>}

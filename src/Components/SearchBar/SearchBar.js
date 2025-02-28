@@ -77,6 +77,9 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
     }
 
     function handleSeries() {
+        setFilter(false);
+        handleAllMovies(false);
+        toggleWatchList(false);
         setseries(true);
     }
 

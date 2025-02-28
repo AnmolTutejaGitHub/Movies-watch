@@ -79,6 +79,7 @@ function OpenMovie({ selectedMovie }) {
                         <PiSubtitlesFill className='white-color pointer-cursor' />
                         {selectedMovie.adult && <TbRating18Plus />}
                     </div>
+                    <div className='bold'>{selectedMovie.original_title}</div>
                     <p>{selectedMovie.overview}</p>
                 </div>
 
@@ -87,7 +88,9 @@ function OpenMovie({ selectedMovie }) {
                     {cast !== [] && <div className='cast flex-row'><span className='white-color span'>Cast : </span>{renderCast}</div>}
                 </div>
             </div>
-
+            <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }} className='json-styling'>
+                {JSON.stringify(selectedMovie, null, 2)}
+            </pre>
         </div>
     );
 }

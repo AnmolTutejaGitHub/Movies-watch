@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import './OpenSeries.css';
 
-function OpenSeries({ series }) {
+function OpenSeries({ series, SetOpenSeries }) {
     const [season, setSeason] = useState(1);
     const [episode, setEpisode] = useState(1);
     const API_KEY = 'ba7953e31d9a9e4bbd5bc6729366b6a2';
     const [seasons, setSeasons] = useState([]);
     const [seriesDetails, setSeriesDetails] = useState(null);
+    const [expand, setExpand] = useState(false);
 
     useEffect(() => {
         if (!series?.id) return;
@@ -29,7 +30,7 @@ function OpenSeries({ series }) {
         }
     }
 
-    if (!series?.id || !seriesDetails) return <div>Select a series...</div>;
+    // if (!series?.id || !seriesDetails) return <div>Select a series...</div>;
 
 
     const selectedSeason = seasons.find((s) => s.season_number === season);
@@ -44,25 +45,44 @@ function OpenSeries({ series }) {
     return (
         <div className='container'>
             <div>
-                <img src={`https://image.tmdb.org/t/p/w500${seriesDetails.poster_path}`} alt={series.name} width={250} />
+                {/* <div onClick={() => SetOpenSeries(false)}>X</div> */}
+                {/* <img src={`https://image.tmdb.org/t/p/w500${seriesDetails.backdrop_path}`} alt={series.name} width={1000} /> */}
+                <div className="header-movie" style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/original${seriesDetails?.backdrop_path})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    height: '500px',
+                }}>
+                </div>
                 <div>
-                    <h2>{series.name}</h2>
-                    <p>First Air Date: {seriesDetails.first_air_date}</p>
-                    <p>Overview: {seriesDetails.overview}</p>
-                    <p>Seasons: {seasons.length}</p>
+                    <h2>{series?.name}</h2>
+                    <p>First Air Date: {seriesDetails?.first_air_date}</p>
+                    <p>Overview: {seriesDetails?.overview}</p>
+                    <p>Seasons: {seasons?.length}</p>
+                    <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }} className='json-styling'>
+                        {JSON.stringify(series, null, 2)}
+                    </pre>
+                    {!expand && <div onClick={() => setExpand(!expand)}>Expand Details</div>}
+                    {expand && <div onClick={() => setExpand(!expand)}>Show Less</div>}
+                    {expand && <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }} className='json-styling'>
+                        {JSON.stringify(seriesDetails, null, 2)}
+                    </pre>
+                    }
+
                 </div>
             </div>
 
-            <div>
+            <div className='flex-selector'>
                 <label>Select Season: </label>
                 <select value={season} onChange={handleSeasonChange}>
                     {seasons.map((s) => (
-                        <option key={s.season_number} value={s.season_number}>
-                            Season {s.season_number}
+                        <option key={s?.season_number} value={s?.season_number}>
+                            Season {s?.season_number}
                         </option>
                     ))}
                 </select>
-
+                <br />
+                <div className='gap'></div>
                 <label>Select Episode: </label>
                 <select value={episode} onChange={(e) => setEpisode(parseInt(e.target.value, 10))}>
                     {Array.from({ length: episodeCount }, (_, i) => i + 1).map((ep) => (
@@ -73,7 +93,7 @@ function OpenSeries({ series }) {
                 </select>
             </div>
 
-            <div>
+            <div className='iframe-series'>
                 <iframe
                     className="movie-frame"
                     src={`https://vidsrc.to/embed/tv/${series.id}/${season}/${episode}`}

@@ -29,6 +29,10 @@ function MoviesSearch() {
         setCurrentSeries(series);
     }
 
+    function SetOpenSeries(_bool) {
+        setOpenSeries(_bool);
+    }
+
 
     const renderSeries = results.map((show) => {
         return (
@@ -45,7 +49,10 @@ function MoviesSearch() {
             </div>
             <div className='flex-series'>{renderSeries}</div>
         </>}
-        {OpenSeries && <OpenSeries series={currentSeries} />}
+        {OpenSeries &&
+            <div className='series-page'>
+                <OpenSeries series={currentSeries} SetOpenSeries={SetOpenSeries} />
+            </div>}
 
     </div >
 }

@@ -26,3 +26,13 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+.series-page {
+    margin-top: 60px;
+}
+
+.json-styling {
+    padding: 4px;
+    background-color: #464646;
+    border-radius: 4px;
+}
