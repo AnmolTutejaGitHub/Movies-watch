@@ -16,6 +16,7 @@ import Filter from '../Pages/Filter/Filter';
 import { Puff } from 'react-loader-spinner';
 import LoginSignUp from "../Components/loginSignup/loginSignUp";
 import Watchlist from "../Components/watchlist/Watchlist";
+import MoviesSearch from "../Pages/MoviesSearch";
 
 // https://cors-anywhere.herokuapp.com/ as proxy 
 
@@ -30,6 +31,7 @@ function App() {
     const [login, setLogin] = useState(false);
     const [signup, setSignUp] = useState(false);
     const [watchList, setWatchList] = useState(false);
+    const [series, setSeries] = useState(false);
 
     function GetSelectedMovie(movie) {
         SetSelectedMovie(movie);
@@ -86,12 +88,16 @@ function App() {
         return user.trim() != '';
     }
 
+    function setseries(_bool) {
+        setSeries(_bool);
+    }
+
     return (
         <div>
             <div className="landing-page">
 
 
-                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser}>
+                <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser} setseries={setseries}>
                 </SearchBarPage>
                 {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
                 {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
@@ -110,7 +116,11 @@ function App() {
                     watchList && <Watchlist user={user} GetSelectedMovie={GetSelectedMovie} isLoggedIn={isLoggedIn} />
                 }
 
-                {!search && !filter && !AllMoviesClicked && !watchList && <div>
+                {
+                    series && <MoviesSearch />
+                }
+
+                {!search && !filter && !AllMoviesClicked && !watchList && !series && <div>
                     <HeaderMovies GetSelectedMovie={GetSelectedMovie} />
                     <Margin padding="80px" />
                     <Popular GetSelectedMovie={GetSelectedMovie} />

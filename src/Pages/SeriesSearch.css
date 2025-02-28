@@ -1,0 +1,28 @@
+.series-search-bar {
+    padding: 10px;
+    margin-top: 70px;
+    background-color: #464646;
+    outline: none;
+    border: none;
+    color: white;
+    width: 400px;
+}
+
+.flex-center {
+    display: flex;
+    justify-items: center;
+}
+
+.flex-series {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.show {
+    cursor: pointer;
+    background-color: rgb(34, 33, 33);
+    padding: 10px;
+    border-radius: 10px;
+}

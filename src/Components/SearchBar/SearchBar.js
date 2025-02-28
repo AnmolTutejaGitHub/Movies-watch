@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaSignOutAlt } from "react-icons/fa";
 
-function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter, user, signupSetter, loginSetter, children, toggleWatchList, SetUser }) {
+function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovies, setFilter, user, signupSetter, loginSetter, children, toggleWatchList, SetUser, setseries }) {
 
     const [Bars, setBars] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
@@ -33,6 +33,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         handleAllMovies(true);
         toggleWatchList(false);
         setSearchTerm('');
+        setseries(false);
     }
 
     function handleHomeClicked(event) {
@@ -42,17 +43,20 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         toggleWatchList(false);
         setSearchTerm('');
         onClearSearch();
+        setseries(false);
     }
 
     function handleFilter() {
         setFilter(true);
         toggleWatchList(false);
         setSearchTerm('');
+        setseries(false);
     }
 
 
     function handleBarsClick() {
         setBars(!Bars);
+        setseries(false);
     }
 
     function handleLogin() {
@@ -69,6 +73,11 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
         toggleWatchList(true);
         setFilter(false);
         setSearchTerm('');
+        setseries(false);
+    }
+
+    function handleSeries() {
+        setseries(true);
     }
 
     function signOut(e) {
@@ -84,7 +93,7 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleAllMoviesClick}>All Movies</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleWatchList}>WatchList</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleFilter} >Filter</a>
-
+            <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleSeries} >Series</a>
 
             {user.trim() == '' && <div className={`login-signup ${Bars ? "login-signup-bars-true" : "login-signup-bars-false"}`}>
                 <button className="login-btn" onClick={handleLogin}>Login</button>
