@@ -9,16 +9,13 @@ function OpenSeries({ series }) {
     const [seriesDetails, setSeriesDetails] = useState(null);
 
     useEffect(() => {
-        if (!series?.id) {
-            return;
-        }
-
+        if (!series?.id) return;
         fetchSeriesDetails();
     }, [series]);
 
     useEffect(() => {
         console.log(seriesDetails);
-    }, [])
+    }, []);
 
     async function fetchSeriesDetails() {
         try {
@@ -32,35 +29,43 @@ function OpenSeries({ series }) {
         }
     }
 
-    if (!series?.id || !seriesDetails) return <div>Select A series...</div>;
+    if (!series?.id || !seriesDetails) return <div>Select a series...</div>;
 
-    const renderSeasons = seasons.map((s) => (
-        <option key={s.season_number} value={s.season_number}>
-            Season {s.season_number}
-        </option>
-    ))
+
+    const selectedSeason = seasons.find((s) => s.season_number === season);
+    const episodeCount = selectedSeason?.episode_count || 1;
+
+    const handleSeasonChange = (e) => {
+        const newSeason = parseInt(e.target.value, 10);
+        setSeason(newSeason);
+        setEpisode(1);
+    };
 
     return (
         <div className='container'>
-            <div >
+            <div>
                 <img src={`https://image.tmdb.org/t/p/w500${seriesDetails.poster_path}`} alt={series.name} width={250} />
-                <div >
+                <div>
                     <h2>{series.name}</h2>
-                    <p>First Air Date : {seriesDetails.first_air_date}</p>
-                    <p>Overview :{seriesDetails.overview}</p>
-                    <p>Seasons : {seasons.length}</p>
-                </div >
-            </div >
+                    <p>First Air Date: {seriesDetails.first_air_date}</p>
+                    <p>Overview: {seriesDetails.overview}</p>
+                    <p>Seasons: {seasons.length}</p>
+                </div>
+            </div>
 
             <div>
                 <label>Select Season: </label>
-                <select value={season} onChange={(e) => setSeason(e.target.value)}>
-                    {renderSeasons}
+                <select value={season} onChange={handleSeasonChange}>
+                    {seasons.map((s) => (
+                        <option key={s.season_number} value={s.season_number}>
+                            Season {s.season_number}
+                        </option>
+                    ))}
                 </select>
 
                 <label>Select Episode: </label>
-                <select value={episode} onChange={(e) => setEpisode(e.target.value)}>
-                    {Array.from({ length: 10 }, (_, i) => i + 1).map((ep) => (
+                <select value={episode} onChange={(e) => setEpisode(parseInt(e.target.value, 10))}>
+                    {Array.from({ length: episodeCount }, (_, i) => i + 1).map((ep) => (
                         <option key={ep} value={ep}>
                             Episode {ep}
                         </option>
@@ -69,7 +74,6 @@ function OpenSeries({ series }) {
             </div>
 
             <div>
-
                 <iframe
                     className="movie-frame"
                     src={`https://vidsrc.to/embed/tv/${series.id}/${season}/${episode}`}
@@ -77,10 +81,9 @@ function OpenSeries({ series }) {
                     referrerPolicy="origin"
                     allowFullScreen
                     title={series.name}
-                >
-                </iframe>
+                />
             </div>
-        </div >
+        </div>
     );
 }
 
