@@ -17,6 +17,7 @@ import { Puff } from 'react-loader-spinner';
 import LoginSignUp from "../Components/loginSignup/loginSignUp";
 import Watchlist from "../Components/watchlist/Watchlist";
 import MoviesSearch from "../Pages/MoviesSearch";
+import { Analytics } from "@vercel/analytics/react"
 
 // https://cors-anywhere.herokuapp.com/ as proxy 
 
@@ -96,7 +97,7 @@ function App() {
         <div>
             <div className="landing-page">
 
-
+                <Analytics />
                 <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser} setseries={setseries}>
                 </SearchBarPage>
                 {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
