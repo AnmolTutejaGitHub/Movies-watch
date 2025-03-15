@@ -94,17 +94,17 @@ function SearchBar({ setSearchTerm, term, onChange, onClearSearch, handleAllMovi
             <input placeholder="Search Movies" type="text" onChange={handleSearch} className={`search-input ${Bars ? "search-input-bars-true" : "search-input-bars-false"}`} value={term}></input>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleHomeClicked}>Home</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleAllMoviesClick}>All Movies</a>
-            <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleWatchList}>WatchList</a>
+            {/* <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleWatchList}>WatchList</a> */}
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleFilter} >Filter</a>
             <a className={`navbar-a ${Bars ? "" : "navbar-a-bars-false"}`} href="#" onClick={handleSeries} >Series</a>
 
-            {user.trim() == '' && <div className={`login-signup ${Bars ? "login-signup-bars-true" : "login-signup-bars-false"}`}>
+            {/* {user.trim() == '' && <div className={`login-signup ${Bars ? "login-signup-bars-true" : "login-signup-bars-false"}`}>
                 <button className="login-btn" onClick={handleLogin}>Login</button>
                 <button className="sign-btn" onClick={handleSignup}>Sign up</button>
                 <div className='user-form'>
                     {children}
                 </div>
-            </div>}
+            </div>} */}
 
             {
                 user &&

@@ -100,8 +100,8 @@ function App() {
                 <Analytics />
                 <SearchBarPage GetSelectedMovie={GetSelectedMovie} onChange={handleSearchChange} onClearSearch={onClearSearch} handleAllMovies={handleAllMovies} setFilter={SetFilter} search={search} loginSetter={loginSetter} signupSetter={signupSetter} user={user} toggleWatchList={toggleWatchList} SetUser={SetUser} setseries={setseries}>
                 </SearchBarPage>
-                {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
-                {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
+                {/* {login && <LoginSignUp type="login" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />}
+                {signup && <LoginSignUp type="signup" onClick={handleUserDisplay} onSubmitBtn={handleSubmit} />} */}
                 <br /><br /><br />
 
                 {filter &&
@@ -113,9 +113,9 @@ function App() {
                     )
                 }
 
-                {
+                {/* {
                     watchList && <Watchlist user={user} GetSelectedMovie={GetSelectedMovie} isLoggedIn={isLoggedIn} />
-                }
+                } */}
 
                 {
                     series && <MoviesSearch />
